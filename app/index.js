@@ -17,39 +17,49 @@ module.exports = yeoman.generators.Base.extend({
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'appName',
+      message: 'What would you like to name your application?',
+      default: ''
     }];
 
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
+    this.prompt(prompts, function(props) {
       done();
-    }.bind(this));
+    });
   },
 
   writing: {
     app: function () {
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
       );
-      this.fs.copy(
+
+      this.fs.copyTpl(
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
       );
+
+      this.fs.copyTpl(
+        this.templatePath('client/index.html'),
+        this.destinationPath('client/index.html')
+      )
     },
 
     projectfiles: function () {
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
       );
-      this.fs.copy(
+
+      this.fs.copyTpl(
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
+      );
+
+      this.fs.copy(
+        this.templatePath('Gruntfile.js'),
+        this.destinationPath('Gruntfile.js')
       );
     }
   },

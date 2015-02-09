@@ -2,10 +2,10 @@
 
 (function() {
   angular
-    .app('myApp')
-    .controller('AppCtrl', AppCtrl);
+    .app('<%= appName %>')
+    .controller('<%= classedName %>Ctrl', <%= classedName %>Ctrl);
 
-  function AppCtrl() {
+  function <%= classedName %>() {
 
   }
 }());

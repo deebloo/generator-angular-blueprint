@@ -9,23 +9,27 @@ module.exports = yeoman.generators.Base.extend({
     this.argument('name', {
       required: true,
       type: String,
-      desc: 'The subgenerator name'
+      desc: 'The name of the controller'
     });
   },
 
   writing: function () {
-    var localTemplate = './blueprints/controller/test.controller.js';
+    var localTemplate = './blueprints/controller/';
     var templatePath = this.templatePath('controller.js');
 
     if (fs.existsSync(localTemplate)) {
       console.log('blueprint found');
 
-      templatePath = localTemplate;
+      templatePath = localTemplate + 'controller.js';
     }
 
     this.fs.copyTpl(
       templatePath,
-      this.destinationPath('test.controller.js')
+      this.destinationPath('./client/' + this.name + '/' + this.name + '.controller.js'),
+      {
+        appName: this._.camelize(this.config.get('appName')),
+        classedName: this._.classify(this.name)
+      }
     );
   }
 });

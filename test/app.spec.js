@@ -3,18 +3,25 @@
 var path = require('path');
 var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
+var os = require('os');
 
-describe('AngularBlueprint:controller', function () {
+describe('angular-blueprint:app', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../controller'))
-      .withArguments('name', '--force')
+    helpers.run(path.join(__dirname, '../app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
+      .withPrompt({
+        appName: 'myApp'
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      'test.controller.js'
+      'bower.json',
+      'package.json',
+      '.editorconfig',
+      '.jshintrc'
     ]);
   });
 });
