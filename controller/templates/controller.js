@@ -5,7 +5,7 @@
     .app('<%= appName %>')
     .controller('<%= classedName %>Ctrl', <%= classedName %>Ctrl);
 
-  function <%= classedName %>() {
+  function <%= classedName %>Ctrl() {
 
   }
 }());

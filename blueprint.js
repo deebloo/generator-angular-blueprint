@@ -1,23 +1,15 @@
-'use strict';
-var yeoman = require('yeoman-generator');
 var fs = require('fs');
 
-module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
-    this.log('You called the AngularBlueprint subgenerator with the argument ' + this.name + '.');
+module.exports = blueprint;
 
-    this.argument('name', {
-      required: true,
-      type: String,
-      desc: 'The name of the controller'
-    });
-  },
-
-  writing: function () {
-    blueprint.call(this, 'controller');
-  }
-});
-
+/**
+ * @name blueprint
+ *
+ * @description
+ * use either the local template or the default one
+ *
+ * @param {string} type
+ */
 function blueprint(type) {
   var localTemplate = './blueprints/' + type + '/';
   var templatePath = this.templatePath(type + '.js');

@@ -13,19 +13,26 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the luminous' + chalk.red('AngularBlueprint') + ' generator!'
+      'Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'
     ));
 
+    // Ask for the appName
     var prompts = [{
       type: 'input',
       name: 'appName',
       message: 'What would you like to name your application?',
-      default: ''
+      default: this._.camelize(this.appname)
     }];
 
-    this.prompt(prompts, function(props) {
+    this.prompt(prompts, function (props) {
+      this.config.save();
+
+      this.config.set('appName', props.appName);
+
+      console.log(this.config.getAll());
+
       done();
-    });
+    }.bind(this));
   },
 
   writing: {
