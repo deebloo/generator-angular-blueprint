@@ -4,17 +4,11 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
-    this.pkg = require('../../package.json');
-  },
-
   prompting: function () {
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'
-    ));
+    this.log(yosay('Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'));
 
     // Ask for the appName
     var prompts = [{
@@ -28,8 +22,6 @@ module.exports = yeoman.generators.Base.extend({
       this.config.save();
 
       this.config.set('appName', props.appName);
-
-      console.log(this.config.getAll());
 
       done();
     }.bind(this));
