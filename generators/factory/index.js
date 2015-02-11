@@ -14,7 +14,7 @@ function writing() {
 
   var tempOptions = {
     appName: this._.camelize(this.config.get('appName')),
-    cameledName: this._.classify(this.name)
+    cameledName: this._.camelize(this.name)
   };
 
   blueprint.copyTpl.call(this, 'factory', destPath, tempOptions);
