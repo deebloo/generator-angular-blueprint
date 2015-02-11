@@ -8,7 +8,8 @@ describe('AngularBlueprint:controller', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/controller'))
       .withArguments(['test'])
-      .withOptions({ 'skip-install': true })
+      .withPrompt({ 'directory': false })
+      .withOptions({ 'skip-install': true})
       .on('end', done);
   });
 
