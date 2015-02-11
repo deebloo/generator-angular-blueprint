@@ -8,6 +8,7 @@ describe('AngularBlueprint:factory', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/factory'))
       .withArguments(['test'])
+      .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true })
       .on('end', done);
   });
