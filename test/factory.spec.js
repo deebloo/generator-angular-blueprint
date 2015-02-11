@@ -4,9 +4,9 @@ var path = require('path');
 var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 
-describe('AngularBlueprint:controller', function () {
+describe('AngularBlueprint:factory', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/controller'))
+    helpers.run(path.join(__dirname, '../generators/factory'))
       .withArguments(['test'])
       .withOptions({ 'skip-install': true })
       .on('end', done);
@@ -14,7 +14,7 @@ describe('AngularBlueprint:controller', function () {
 
   it('creates files', function () {
     assert.file([
-      './client/app/views/test/test.controller.js'
+      './client/app/views/test/test.factory.js'
     ]);
   });
 });
