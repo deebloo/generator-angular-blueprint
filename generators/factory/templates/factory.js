@@ -1,10 +1,12 @@
 (function() {
+
   angular
     .app('<%= appName %>')
-    .factory('<%= dashedName %>', <%= cameledName %>);
+    .factory('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {
 
   }
+
 }());
 

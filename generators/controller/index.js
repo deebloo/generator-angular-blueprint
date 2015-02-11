@@ -7,7 +7,7 @@ module.exports = yeoman.generators.NamedBase.extend({
 });
 
 function writing() {
-  blueprint.copyTpl.call(this, 'controller', {
+  blueprint.copyTpl.call(this, 'controller', 'views', {
     appName: this._.camelize(this.config.get('appName')),
     classedName: this._.classify(this.name)
   });

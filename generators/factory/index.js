@@ -7,9 +7,8 @@ module.exports = yeoman.generators.NamedBase.extend({
 });
 
 function writing() {
-  blueprint.copyTpl.call(this, 'factory', {
+  blueprint.copyTpl.call(this, 'factory', 'services', {
     appName: this._.camelize(this.config.get('appName')),
-    cameledName: this._.camelize(this.name),
-    dashedName: this._.dasherize(this.name)
+    cameledName: this._.camelize(this.name)
   });
 }
