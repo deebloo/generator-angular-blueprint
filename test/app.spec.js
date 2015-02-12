@@ -30,7 +30,12 @@ describe('angular-blueprint:app', function () {
       './client/favicon.ico',
       './client/index.html',
       './client/robots.txt',
-      './client/app/',
+      './client/app/components/',
+      './client/app/services/',
+      './client/app/views/about/',
+      './client/app/views/application/',
+      './client/app/views/home/',
+      './client/app/views/main/',
       './client/images/',
       './client/styles/',
       './client/test/'
