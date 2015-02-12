@@ -18,4 +18,6 @@ function writing() {
   };
 
   blueprint.copyTpl.call(this, 'view', 'html',  destPath, tempOptions);
+
+  blueprint.copyTpl.call(this, 'view', 'scss',  destPath, tempOptions);
 }

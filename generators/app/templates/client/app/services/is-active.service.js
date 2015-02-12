@@ -3,7 +3,7 @@
 /**
  * @ngdoc Service
  *
- * @name <%= appName %>.service:<%= cameledName %>
+ * @name <%= appName %>.service:isActive
  *
  * @description
  * Service for <%= appName %>
@@ -19,8 +19,10 @@
 
     /**
      * @name Check Active
-     * @returns {boolean}
+     *
      * @memberof isActive
+     *
+     * @returns {boolean}
      */
     function checkActive() {
       var links    = arguments,

@@ -1,7 +1,7 @@
 /**
  * @ngdoc Controller
  *
- * @name <%= appName %>.controller:<%= cameledName %>
+ * @name <%= appName %>.controller:<%= classedName %>
  *
  * @description
  * Controller for <%= appName %>

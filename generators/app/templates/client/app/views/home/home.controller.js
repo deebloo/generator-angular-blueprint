@@ -3,7 +3,7 @@
 /**
  * @ngdoc Controller
  *
- * @name <%= appName %>.controller:<%= cameledName %>
+ * @name <%= appName %>.controller:HomeCtrl
  *
  * @description
  * Controller for <%= appName %>

@@ -3,7 +3,7 @@
 /**
  * @ngdoc Controller
  *
- * @name <%= appName %>.controller:<%= cameledName %>
+ * @name <%= appName %>.controller:ApplicationCtrl
  *
  * @description
  * The main application Controller for <%= appName %>
@@ -24,7 +24,7 @@
     /**
      * @name stateChangeSuccess
      *
-     * @memberof <%= appName %>.controller:<%= cameledName %>
+     * @memberof <%= appName %>.controller:ApplicationCtrl
      *
      * @param event {Object} the event object
      *
