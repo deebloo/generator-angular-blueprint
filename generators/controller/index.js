@@ -17,5 +17,5 @@ function writing() {
     classedName: this._.classify(this.name)
   };
 
-  blueprint.copyTpl.call(this, 'controller', destPath, tempOptions);
+  blueprint.copyTpl.call(this, 'controller', 'js', destPath, tempOptions);
 }

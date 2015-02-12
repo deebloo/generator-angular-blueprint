@@ -17,5 +17,5 @@ function writing() {
     cameledName: this._.camelize(this.name)
   };
 
-  blueprint.copyTpl.call(this, 'view', destPath, tempOptions);
+  blueprint.copyTpl.call(this, 'view', 'html',  destPath, tempOptions);
 }
