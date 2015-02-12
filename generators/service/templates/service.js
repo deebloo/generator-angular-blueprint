@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .app('<%= appName %>')
+    .module('<%= appName %>')
     .service('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {

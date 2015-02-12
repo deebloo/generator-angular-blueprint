@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .app('<%= appName %>')
+    .module('<%= appName %>')
     .controller('<%= classedName %>Ctrl', <%= classedName %>Ctrl);
 
   function <%= classedName %>Ctrl() {

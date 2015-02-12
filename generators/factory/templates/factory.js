@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .app('<%= appName %>')
+    .module('<%= appName %>')
     .factory('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {
