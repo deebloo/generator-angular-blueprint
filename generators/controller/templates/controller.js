@@ -1,3 +1,11 @@
+/**
+ * @ngdoc Controller
+ *
+ * @name <%= appName %>.controller:<%= cameledName %>
+ *
+ * @description
+ * Controller for <%= appName %>
+ */
 (function() {
 
   angular

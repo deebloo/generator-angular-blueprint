@@ -1,12 +1,12 @@
 'use strict';
 
 /**
- * @ngdoc controller
+ * @ngdoc Controller
  *
- * @name HomeCtrl
+ * @name <%= appName %>.controller:<%= cameledName %>
  *
  * @description
- * Controller of the <%= appName %>
+ * Controller for <%= appName %>
  */
 (function() {
 

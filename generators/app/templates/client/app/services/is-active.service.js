@@ -1,13 +1,12 @@
 'use strict';
 
 /**
- * @ngdoc factory
+ * @ngdoc Service
  *
- * @name isActive
+ * @name <%= appName %>.service:<%= cameledName %>
  *
  * @description
- * # isActive
- * Factory in the <%= appName %>.
+ * Service for <%= appName %>
  */
 (function() {
 

@@ -1,3 +1,11 @@
+/**
+ * @ngdoc Service
+ *
+ * @name <%= appName %>.service:<%= cameledName %>
+ *
+ * @description
+ * Factory for <%= appName %>
+ */
 (function() {
 
   angular

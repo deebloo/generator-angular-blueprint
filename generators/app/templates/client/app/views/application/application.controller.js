@@ -1,13 +1,12 @@
 'use strict';
 
 /**
- * @ngdoc function
+ * @ngdoc Controller
  *
- * @name myApp.controller:ApplicationCtrl
+ * @name <%= appName %>.controller:<%= cameledName %>
  *
  * @description
- * # ApplicationCtrl
- * The main application controller for <%= appName %>
+ * The main application Controller for <%= appName %>
  */
 (function() {
 
@@ -24,6 +23,8 @@
 
     /**
      * @name stateChangeSuccess
+     *
+     * @memberof <%= appName %>.controller:<%= cameledName %>
      *
      * @param event {Object} the event object
      *
