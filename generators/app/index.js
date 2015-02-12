@@ -44,20 +44,52 @@ function prompting() {
  * @name app
  */
 function app() {
-  this.fs.copyTpl(
-    this.templatePath('_package.json'),
-    this.destinationPath('package.json')
+  this.fs.copy(
+    this.templatePath('_.bowerrc'),
+    this.destinationPath('.bowerrc')
+  );
+
+  this.fs.copy(
+    this.templatePath('.editorconfig'),
+    this.destinationPath('.editorconfig')
+  );
+
+  this.fs.copy(
+    this.templatePath('.gitattributes'),
+    this.destinationPath('.gitattributes')
+  );
+
+  this.fs.copy(
+    this.templatePath('.gitignore'),
+    this.destinationPath('.gitignore')
+  );
+
+  this.fs.copy(
+    this.templatePath('.jshintrc'),
+    this.destinationPath('.jshintrc')
   );
 
   this.fs.copyTpl(
-    this.templatePath('_bower.json'),
-    this.destinationPath('bower.json')
+    this.templatePath('bower.json'),
+    this.destinationPath('bower.json'),
+    { appName: this._.camelize(this.config.get('appName')) }
+  );
+
+  this.fs.copy(
+    this.templatePath('Gruntfile.js'),
+    this.destinationPath('Gruntfile.js')
   );
 
   this.fs.copyTpl(
-    this.templatePath('client/index.html'),
-    this.destinationPath('client/index.html')
-  )
+    this.templatePath('package.json'),
+    this.destinationPath('package.json'),
+    { appName: this._.camelize(this.config.get('appName')) }
+  );
+
+  this.fs.copy(
+    this.templatePath('README.md'),
+    this.destinationPath('README.md')
+  );
 }
 
 /**
@@ -65,20 +97,15 @@ function app() {
  */
 function projectfiles() {
   this.fs.copyTpl(
-    this.templatePath('_editorconfig'),
-    this.destinationPath('.editorconfig')
-  );
-
-  this.fs.copyTpl(
-    this.templatePath('_jshintrc'),
-    this.destinationPath('.jshintrc')
-  );
-
-  this.fs.copy(
-    this.templatePath('_Gruntfile.js'),
-    this.destinationPath('Gruntfile.js')
+    this.templatePath('client'),
+    this.destinationPath('client'),
+    {
+      appName: this._.camelize(this.config.get('appName')),
+      humanAppName: this._.humanize(this.config.get('appName'))
+    }
   );
 }
+
 
 /**
  * @name install
