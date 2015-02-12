@@ -16,10 +16,24 @@ describe('angular-blueprint:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'bower.json',
-      'package.json',
+      '.bowerrc',
       '.editorconfig',
-      '.jshintrc'
+      '.gitattributes',
+      '.gitignore',
+      '.jshintrc',
+      'bower.json',
+      'Gruntfile.js',
+      'package.json',
+      'README.md',
+      './client/404.html',
+      './client/app.js',
+      './client/favicon.ico',
+      './client/index.html',
+      './client/robots.txt',
+      './client/app/',
+      './client/images/',
+      './client/styles/',
+      './client/test/'
     ]);
   });
 });
