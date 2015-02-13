@@ -72,6 +72,20 @@ Produces:
 client/app/services/user/user.factory.js
 ```
 
+### Directive
+
+Generates a new Angular Directive
+
+Example:
+```
+yo angular-blueprint:directive nav
+[?] Where should I generate this? (./client/app/components/nav)
+```
+Produces:
+```
+client/app/components/nav/nav.directive.js
+```
+
 ### Service
 
 Generates a new Angular Service
