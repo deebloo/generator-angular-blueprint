@@ -45,6 +45,49 @@ Produces:
 client/app/views/home/home.controller.js
 ```
 
+### Factory
+
+Generates a new Angular Factory
+
+Example:
+```
+yo angular-blueprint:factory user
+[?] Where should I generate this? (./client/app/services/user)
+```
+Produces:
+```
+client/app/services/user/user.factory.js
+```
+
+### Service
+
+Generates a new Angular Service
+
+Example:
+```
+yo angular-blueprint:factory user
+[?] Where should I generate this? (./client/app/services/user)
+```
+Produces:
+```
+client/app/services/user/user.service.js
+```
+
+### View
+
+Generates a new Angular Factory
+
+Example:
+```
+yo angular-blueprint:view about
+[?] Where should I generate this? (./client/app/views/about)
+```
+Produces:
+```
+client/app/views/about/user.view.html
+client/app/views/about/user.view.scss
+```
+
 ## To contribute
 ```
 git clone https://github.com/DannyBlueDesign/generator-angular-blueprint.git
