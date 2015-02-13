@@ -13,8 +13,8 @@ The following example will override the global controller template:
   - blueprints
     * controller
       - controller.js
-* client
-* docs
+  - client
+  - docs
 
 ## Generators
 
