@@ -56,6 +56,7 @@ yo angular-blueprint:controller home
 Produces:
 ```
 client/app/views/home/home.controller.js
+client/app/views/home/home.spec.js
 ```
 
 ### Factory
@@ -70,6 +71,7 @@ yo angular-blueprint:factory user
 Produces:
 ```
 client/app/services/user/user.factory.js
+client/app/services/user/user.spec.js
 ```
 
 ### Directive
@@ -98,11 +100,12 @@ yo angular-blueprint:factory user
 Produces:
 ```
 client/app/services/user/user.service.js
+client/app/services/user/user.spec.js
 ```
 
 ### View
 
-Generates a new Angular Factory
+Generates a new Angular View
 
 Example:
 ```
