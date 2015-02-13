@@ -17,7 +17,8 @@ describe('AngularBlueprint:route', function () {
     assert.file([
       './client/app/views/test/test.view.html',
       './client/app/views/test/test.view.scss',
-      './client/app/views/test/test.controller.js'
+      './client/app/views/test/test.controller.js',
+      './client/app/views/test/test.router.js'
     ]);
   });
 });
