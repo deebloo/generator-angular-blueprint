@@ -28,7 +28,7 @@ Produces
 client/app/views/home/home.controller.js
 ```
 
-To contribute:
+## To contribute
 ```
 git clone https://github.com/DannyBlueDesign/generator-angular-blueprint.git
 ```
