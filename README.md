@@ -10,9 +10,11 @@ Don't like the style of comments we have chosen? Use your own! Simply create a f
 The following example will override the global controller template:
 
 * /
-  * blueprints
+  - blueprints
     * controller
-      * controller.js
+      - controller.js
+* client
+* docs
 
 ## Generators
 
