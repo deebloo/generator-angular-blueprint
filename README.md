@@ -21,7 +21,7 @@ The following example will override the global controller template:
 
 ### APP
 
-Generates the application scaffolding
+Generates the main application scaffolding
 
 ```
 yo angular-blueprint
