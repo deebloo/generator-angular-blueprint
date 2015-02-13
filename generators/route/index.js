@@ -22,7 +22,8 @@ function writing() {
     classedName: this._.classify(this.name),
     cameledName: this._.camelize(this.name),
     dashedName: this._.dasherize(this.name),
-    humanName: this._.humanize(this.name)
+    humanName: this._.humanize(this.name),
+    type: 'Controller'
   };
 
   blueprint.copyTpl.call(this, 'view', 'html', tempOptions);
@@ -32,4 +33,6 @@ function writing() {
   blueprint.copyTpl.call(this, 'controller', 'js', tempOptions);
 
   blueprint.copyTpl.call(this, 'router', 'js', tempOptions);
+
+  blueprint.copyTpl.call(this, 'spec', 'js', tempOptions);
 }

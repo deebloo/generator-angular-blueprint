@@ -22,8 +22,11 @@ function init() {
 function writing() {
   var tempOptions = {
     appName: this._.camelize(this.config.get('appName')),
-    classedName: this._.classify(this.name)
+    classedName: this._.classify(this.name),
+    type: 'Controller'
   };
 
   blueprint.copyTpl.call(this, 'controller', 'js', tempOptions);
+
+  blueprint.copyTpl.call(this, 'spec', 'js', tempOptions);
 }

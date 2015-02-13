@@ -19,8 +19,11 @@ function init() {
 function writing() {
   var tempOptions = {
     appName: this._.camelize(this.config.get('appName')),
-    cameledName: this._.camelize(this.name)
+    cameledName: this._.camelize(this.name),
+    type: 'factory'
   };
 
   blueprint.copyTpl.call(this, 'factory', 'js', tempOptions);
+
+  blueprint.copyTpl.call(this, 'spec', 'js', tempOptions);
 }

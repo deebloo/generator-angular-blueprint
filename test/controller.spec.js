@@ -15,7 +15,8 @@ describe('AngularBlueprint:controller', function () {
 
   it('creates files', function () {
     assert.file([
-      './foo/bar/test.controller.js'
+      './foo/bar/test.controller.js',
+      './foo/bar/test.spec.js'
     ]);
   });
 });
