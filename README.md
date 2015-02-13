@@ -14,6 +14,23 @@ Generates the application skelleton
 yo angular-blueprint
 ```
 
+### Route
+
+Generates a new route and all of its components
+
+Example:
+```
+yo angular-blueprint:route home
+[?] Where should I generate this? (./client/app/views/home)
+```
+Produces:
+```
+client/app/views/home/home.controller.js
+client/app/views/home/home.route.js
+client/app/views/home/home.view.html
+client/app/views/home/home.view.scss
+```
+
 ### Controller
 
 Generates a new controller
@@ -23,7 +40,7 @@ Example:
 yo angular-blueprint:controller home
 [?] Where should I generate this? (./client/app/views/home)
 ```
-Produces
+Produces:
 ```
 client/app/views/home/home.controller.js
 ```
