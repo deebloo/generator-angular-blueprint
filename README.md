@@ -6,6 +6,10 @@ Generator Angular Blueprint introducing the idea of blueprints to an angular sca
 Lots of Yeoman generators are out there, but what if you don't agree? You can fork the repo and make changes and install it on your own, OR, you can use generator-angular-blueprints.
 Don't like the style of comments we have chosen? Use your own! Simply create a folder in your root project called "blueprints".
 
+```
+npm install -g generator-angular-blueprint
+```
+
 The following example will override the global controller template:
 
 * /
