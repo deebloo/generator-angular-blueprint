@@ -19,6 +19,8 @@ The following example will override the global controller template:
   - client
   - docs
 
+Now when ever you run ```yo angular-blueprint:controller foo``` it will use your own controller template.
+
 ## Generators
 
 ### APP
