@@ -37,7 +37,8 @@ describe('angular-blueprint:app', function () {
       './client/app/views/home/',
       './client/app/views/main/',
       './client/images/',
-      './client/styles/'
+      './client/styles/',
+      './doc'
     ]);
   });
 });

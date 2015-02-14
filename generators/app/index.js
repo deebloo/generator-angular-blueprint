@@ -103,6 +103,11 @@ function projectfiles() {
       humanAppName: this._.humanize(this.config.get('appName'))
     }
   );
+
+  this.fs.copy(
+    this.templatePath('doc'),
+    this.destinationPath('doc')
+  )
 }
 
 /**
