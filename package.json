@@ -17,8 +17,16 @@
     "test": "mocha"
   },
   "files": [
-    "app",
-    "controller"
+    "generators/app",
+    "generators/controller",
+    "generators/directive",
+    "generators/factory",
+    "generators/route",
+    "generators/router",
+    "generators/service",
+    "generators/spec",
+    "generators/view",
+    "lib/blueprint"
   ],
   "keywords": [
     "yeoman-generator"
