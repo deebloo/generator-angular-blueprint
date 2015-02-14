@@ -1,5 +1,5 @@
 'use strict';
-<% if(type === 'Controller') { %> describe('<%= type %>:<%= classedName %>Ctrl', function () { %><% } %><% if(type !== 'Controller') { %> describe('<%= type %>:<%= cameledName %>', function () { %><% } %>
+<% if(type === 'Controller') { %> describe('<%= type %>:<%= classedName %>Ctrl', function () { %><% } %><% if(type !== 'Controller') { %> describe('<%= type %>:<%= cameledName %>', function () { <% } %>
 
   // load the controller's module
   beforeEach(module('<%= appName %>'));
