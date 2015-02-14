@@ -4,4 +4,7 @@ node_js:
 before_install:
   - npm install
 script:
- - npm test
+  - npm test
+notifications:
+  email:
+    - dannybluedesign@gmail.com
