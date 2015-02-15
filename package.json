@@ -30,7 +30,10 @@
     "lib/blueprint.js"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "angular",
+    "scaffolding",
+    "app"
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.0",
