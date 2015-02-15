@@ -16,7 +16,7 @@ describe('AngularBlueprint:route', function () {
   it('creates files', function () {
     assert.file([
       './client/app/views/hello-world/hello-world.view.html',
-      './client/app/views/hello-world/hello-world.view.scss',
+      './client/app/views/hello-world/hello-world.style.scss',
       './client/app/views/hello-world/hello-world.controller.js',
       './client/app/views/hello-world/hello-world.router.js',
       './client/app/views/hello-world/hello-world.spec.js'

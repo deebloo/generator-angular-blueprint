@@ -16,7 +16,7 @@ describe('AngularBlueprint:view', function () {
   it('creates files', function () {
     assert.file([
       './client/app/views/test/test.view.html',
-      './client/app/views/test/test.view.scss'
+      './client/app/views/test/test.style.scss'
     ]);
   });
 });

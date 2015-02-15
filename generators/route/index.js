@@ -28,7 +28,7 @@ function writing() {
 
   blueprint.copyTpl.call(this, 'view', 'html', tempOptions);
 
-  blueprint.copyTpl.call(this, 'view', 'scss', tempOptions);
+  blueprint.copyTpl.call(this, 'style', 'scss', tempOptions);
 
   blueprint.copyTpl.call(this, 'controller', 'js', tempOptions);
 

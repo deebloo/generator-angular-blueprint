@@ -26,6 +26,7 @@
     "generators/service",
     "generators/spec",
     "generators/view",
+    "generators/style",
     "lib/blueprint.js"
   ],
   "keywords": [
