@@ -16,12 +16,26 @@ Don't like the style of comments we have chosen? Use your own! Simply create a f
 npm install -g generator-angular-blueprint
 ```
 
-The following example will override the global controller template:
+The file structure below is how to override each of the potential templates.
 
 * /
   - blueprints
     * controller
       - controller.js
+    * view
+      - view.js
+    * style
+      - style.scss
+    * service
+      - controller.js
+    * factory
+      - controller.js
+    * directive
+      - directive.js
+    * router
+      - router.js
+    * spec
+      - spec.js
   - client
   - docs
 
