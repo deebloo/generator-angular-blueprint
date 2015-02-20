@@ -16,40 +16,6 @@ Don't like the style of comments we have chosen? Use your own! Simply create a f
 npm install -g generator-angular-blueprint
 ```
 
-The file structure below is how to override each of the potential templates.
-
-* /
-  - blueprints
-    * controller
-      - controller.js
-    * view
-      - view.js
-    * style
-      - style.scss
-    * service
-      - controller.js
-    * factory
-      - controller.js
-    * directive
-      - directive.js
-    * router
-      - router.js
-    * spec
-      - spec.js
-  - client
-  - docs
-
-Now when ever you run ```yo angular-blueprint:controller foo``` it will use your own controller template.
-The following template values are passed in to each template and are available for you to use.
-
-```
-<%= appName %> // myApp
-<%= classedName %> // ClassedName
-<%= dashedName %> // dashed-name
-<%= humanName %> // human name
-<%= type %> // {controller|factory|service|directive}
-```
-
 ## Generators
 
 ### APP
@@ -78,6 +44,15 @@ directive
 router
 spec
 ```
+
+The following template values are passed in to each template and are available for you to use:
+```
+<%= appName %> // myApp
+<%= classedName %> // ClassedName
+<%= dashedName %> // dashed-name
+<%= humanName %> // human name
+<%= type %> // {controller|factory|service|directive}
+
 Produces:
 ```
 blueprints/controller/controller.js
