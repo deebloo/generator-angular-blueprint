@@ -44,6 +44,11 @@ yo angular-blueprint:blueprint
 8) spec
 ```
 
+Produces:
+```
+blueprints/controller/controller.js
+```
+
 The following template values are passed in to each template and are available for you to use:
 ```
 <%= appName %> // myApp
@@ -51,10 +56,6 @@ The following template values are passed in to each template and are available f
 <%= dashedName %> // dashed-name
 <%= humanName %> // human name
 <%= type %> // {controller|factory|service|directive}
-
-Produces:
-```
-blueprints/controller/controller.js
 ```
 
 ### Route
