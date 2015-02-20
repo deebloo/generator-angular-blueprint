@@ -60,6 +60,19 @@ Generates the main application scaffolding
 yo angular-blueprint
 ```
 
+### Blueprint
+
+Generates a blueprint to be customized
+
+Example:
+```
+yo angular-blueprint:blueprint controller
+```
+Produces:
+```
+blueprints/controller/controller.js
+```
+
 ### Route
 
 Generates a new route and all of its components
