@@ -98,7 +98,7 @@ Generates a new controller
 Example:
 ```
 yo angular-blueprint:controller home
-[?] Where should I generate this? (./client/app/views/home)
+[?] Where should I generate "home"? (./client/app/views/home)
 ```
 Produces:
 ```
