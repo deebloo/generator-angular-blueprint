@@ -40,6 +40,15 @@ The file structure below is how to override each of the potential templates.
   - docs
 
 Now when ever you run ```yo angular-blueprint:controller foo``` it will use your own controller template.
+The following template values are passed in to each template and are available for you to use.
+
+```
+<%= appName %> // myApp
+<%= classedName %> // ClassedName
+<%= dashedName %> // dashed-name
+<%= humanName %> // human name
+<%= type %> // {controller|factory|service|directive}
+```
 
 ## Generators
 
@@ -58,7 +67,7 @@ Generates a new route and all of its components
 Example:
 ```
 yo angular-blueprint:route home
-[?] Where should I generate this? (./client/app/views/home)
+[?] Where should I generate "home"? (./client/app/views/home)
 ```
 Produces:
 ```
@@ -91,7 +100,7 @@ Generates a new Angular Factory
 Example:
 ```
 yo angular-blueprint:factory user
-[?] Where should I generate this? (./client/app/services/user)
+[?] Where should I generate "user"? (./client/app/services/user)
 ```
 Produces:
 ```
@@ -106,7 +115,7 @@ Generates a new Angular Directive
 Example:
 ```
 yo angular-blueprint:directive nav
-[?] Where should I generate this? (./client/app/components/nav)
+[?] Where should I generate "nav"? (./client/app/components/nav)
 ```
 Produces:
 ```
@@ -120,7 +129,7 @@ Generates a new Angular Service
 Example:
 ```
 yo angular-blueprint:factory user
-[?] Where should I generate this? (./client/app/services/user)
+[?] Where should I generate "user"? (./client/app/services/user)
 ```
 Produces:
 ```
@@ -135,7 +144,7 @@ Generates a new Angular View
 Example:
 ```
 yo angular-blueprint:view about
-[?] Where should I generate this? (./client/app/views/about)
+[?] Where should I generate "about"? (./client/app/views/about)
 ```
 Produces:
 ```
