@@ -32,17 +32,16 @@ Generates a blueprint to be customized
 
 Example:
 ```
-yo angular-blueprint:blueprint controller
-
-//options are
-controller
-view
-style
-service
-factory
-directive
-router
-spec
+yo angular-blueprint:blueprint
+[?] Which blueprint would you like to create?
+1) controller
+2) view
+3) style
+4) service
+5) factory
+6) directive
+7) router
+8) spec
 ```
 
 The following template values are passed in to each template and are available for you to use:
