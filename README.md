@@ -67,6 +67,16 @@ Generates a blueprint to be customized
 Example:
 ```
 yo angular-blueprint:blueprint controller
+
+//options are
+controller
+view
+style
+service
+factory
+directive
+router
+spec
 ```
 Produces:
 ```
