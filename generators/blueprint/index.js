@@ -3,8 +3,9 @@
 var yeoman = require('yeoman-generator');
 var blueprint = require('../../lib/blueprint');
 
-module.exports = yeoman.generators.NamedBase.extend({
+module.exports = yeoman.generators.Base.extend({
   init: init,
+  prompting: prompting,
   writing: writing
 });
 
@@ -12,16 +13,44 @@ function init() {
   this.destPath = './blueprints';
 }
 
+function prompting() {
+  var done = this.async();
+
+  this.prompt({
+    type   : 'list',
+    name   : 'blueprints',
+    message: 'Which blueprint would you like to create?',
+    choices: [
+      'controller',
+      'view',
+      'style',
+      'service',
+      'factory',
+      'directive',
+      'router',
+      'spec'
+    ]
+  }, function promptSuccess(answers) {
+    this.blueprint = answers.blueprints;
+
+    done();
+  }.bind(this));
+}
+
 /**
  * @name writing
  */
 function writing() {
-  this.sourceRoot('generators/' + this.name + '/templates/');
+  var templateDir = __dirname + '!@#$'; // Mark the end of the string so it cn be easily replace below
+
+  templateDir = templateDir.replace('blueprint!@#$', this.blueprint + '/' + 'templates/');
+
+  this.sourceRoot(templateDir); // manually set source root to the select generator type
 
   var fileExt = (function() {
     var ext;
 
-    switch(this.name) {
+    switch(this.blueprint) {
       case 'view':
         ext = '.html';
         break;
@@ -36,7 +65,7 @@ function writing() {
   }.bind(this)());
 
   this.fs.copy(
-    this.templatePath(this.name + fileExt),
-    this.destinationPath('./blueprints/' + this.name + '/' + this.name + fileExt)
+    this.templatePath(this.blueprint + fileExt),
+    this.destinationPath('./blueprints/' + this.blueprint + '/' + this.blueprint + fileExt)
   );
 }
