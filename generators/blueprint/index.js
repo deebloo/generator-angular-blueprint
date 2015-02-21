@@ -1,7 +1,8 @@
 'use strict';
 
-var yeoman = require('yeoman-generator');
-var blueprint = require('../../lib/blueprint');
+var yeoman = require('yeoman-generator'),
+    blueprint = require('../../lib/blueprint'),
+    fs = require('fs');
 
 module.exports = yeoman.generators.Base.extend({
   init: init,
@@ -41,6 +42,13 @@ function prompting() {
  * @name writing
  */
 function writing() {
+  if(!fs.existsSync('./blueprints/templates/blueprint.json')) {
+    this.fs.copy(
+      this.templatePath('blueprint.json'),
+      this.destinationPath('./blueprints/templates/blueprint.json')
+    );
+  }
+
   var templateDir = __dirname + '!@#$'; // Mark the end of the string so it cn be easily replace below
 
   templateDir = templateDir.replace('blueprint!@#$', this.blueprint + '/' + 'templates/');
@@ -66,6 +74,6 @@ function writing() {
 
   this.fs.copy(
     this.templatePath(this.blueprint + fileExt),
-    this.destinationPath('./blueprints/' + this.blueprint + '/' + this.blueprint + fileExt)
+    this.destinationPath('./blueprints/templates/' + this.blueprint + '/template' + fileExt)
   );
 }

@@ -14,7 +14,8 @@ describe('AngularBlueprint:blueprint - view', function () {
 
   it('creates files', function () {
     assert.file([
-      'blueprints/view/view.html'
+      'blueprints/templates/view/template.html',
+      'blueprints/templates/blueprint.json'
     ]);
   });
 });
