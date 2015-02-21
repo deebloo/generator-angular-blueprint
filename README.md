@@ -46,7 +46,7 @@ yo angular-blueprint:blueprint
 
 Produces:
 ```
-blueprints/controller/controller.js
+blueprints/templates/controller/template.js
 ```
 
 The following template values are passed in to each template and are available for you to use:
