@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-blueprint",
-  "version": "1.0.51",
+  "version": "1.1.0",
   "description": "Yeoman angular generator that allows you to override global templates with your own!( Idea COMPLETELY ripped from ember-cli (: )",
   "license": "MIT",
   "repository": "DannyBlueDesign/generator-angular-blueprint",
