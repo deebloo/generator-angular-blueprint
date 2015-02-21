@@ -27,6 +27,7 @@
     "generators/spec",
     "generators/view",
     "generators/style",
+    "generators/blueprint",
     "lib/blueprint.js",
     "lib/findInstalledBlueprint.js"
   ],
