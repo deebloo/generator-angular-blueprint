@@ -28,7 +28,7 @@
     "generators/view",
     "generators/style",
     "lib/blueprint.js",
-    "lib/findInstalledBlueprint"
+    "lib/findInstalledBlueprint.js"
   ],
   "keywords": [
     "yeoman-generator",
