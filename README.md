@@ -28,7 +28,8 @@ yo angular-blueprint
 
 ### Blueprint
 
-Generates a blueprint to be customized
+Generates a blueprint to be customized. The template file will be placed into your local project.
+From there you can customize the template any way that you like.
 
 Example:
 ```
