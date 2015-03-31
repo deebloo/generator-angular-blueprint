@@ -17,7 +17,7 @@
   function <%= cameledName %>() {
     return {
         restrict: 'EA',
-        // templateUrl: 'app/directives/<%= cameledName %>/<%= cameledName %>.html'
+        // templateUrl: 'app/components/<%= cameledName %>/<%= cameledName %>.html'
         scope: {},
         link: link
     };
