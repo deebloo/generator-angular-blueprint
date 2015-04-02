@@ -5,7 +5,7 @@ script:
   - npm test
   - npm install -g yo
   - npm install -g .
-  - yo angular-blueprint myApp
+  - yo angular-blueprint myApp | xargs echo
 notifications:
   email:
     - dannybluedesign@gmail.com
