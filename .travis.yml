@@ -5,7 +5,7 @@ script:
   - npm test
   - npm install -g yo
   - npm install -g .
-  - mkdir ~/.config/configstore/
+  - mkdir ~/.config/ && mkdir ~/.config/configstore/
   - touch ~/.config/configstore/insight-yo.yml && echo "optOut:true" >> ~/.config/configstore/insight-yo.yml
   - mkdir testAppDir && cd testAppDir
   - yo angular-blueprint myApp
