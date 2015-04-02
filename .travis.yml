@@ -7,7 +7,7 @@ script:
   - npm install -g .
   - touch  ~/.config/configstore/insight-yo.yml && echo "optOut: true" >> ~/.config/configstore/insight-yo.yml
   - mkdir testAppDir && cd testAppDir
-  - yo angular-blueprint myApp | xargs echo -0
+  - yo angular-blueprint myApp
 notifications:
   email:
     - dannybluedesign@gmail.com
