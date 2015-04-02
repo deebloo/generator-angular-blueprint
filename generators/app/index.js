@@ -4,8 +4,8 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
+  init: init,
   prompting: prompting,
-
   writing: {
     app: app,
     projectfiles: projectfiles,
@@ -14,29 +14,43 @@ module.exports = yeoman.generators.Base.extend({
 });
 
 /**
+ * @name init
+ */
+function init() {
+  this.argument('appName', { type: String });
+}
+
+/**
  * @name prompting
  */
 function prompting() {
-  var done = this.async();
-
-  // Have Yeoman greet the user.
-  this.log(yosay('Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'));
-
-  // Ask for the appName
-  var prompts = [{
-    type: 'input',
-    name: 'appName',
-    message: 'What would you like to name your application?',
-    default: this._.camelize(this.appname)
-  }];
-
-  this.prompt(prompts, function (props) {
+  if(this.appName) {
     this.config.save();
 
-    this.config.set('appName', props.appName);
+    this.config.set('appName', this.appName);
+  }
+  else {
+    var done = this.async();
 
-    done();
-  }.bind(this));
+    // Have Yeoman greet the user.
+    this.log(yosay('Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'));
+
+    // Ask for the appName
+    var prompts = [{
+      type: 'input',
+      name: 'appName',
+      message: 'What would you like to name your application?',
+      default: this._.camelize(this.appname)
+    }];
+
+    this.prompt(prompts, function (props) {
+      this.config.save();
+
+      this.config.set('appName', props.appName);
+
+      done();
+    }.bind(this));
+  }
 }
 
 /**
