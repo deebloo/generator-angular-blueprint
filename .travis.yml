@@ -3,6 +3,9 @@ node_js:
   - '0.10'
 script:
   - npm test
+  - npm install -g yo
+  - npm install -g .
+  - yo angular-blueprint
 notifications:
   email:
     - dannybluedesign@gmail.com
