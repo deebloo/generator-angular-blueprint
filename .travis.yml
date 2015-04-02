@@ -7,7 +7,7 @@ script:
   - npm install -g .
   - rm -rf testAppDir
   - mkdir testAppDir && cd testAppDir
-  - yo angular-blueprint myApp
+  - yo angular-blueprint myApp | xargs echo -0
 notifications:
   email:
     - dannybluedesign@gmail.com
