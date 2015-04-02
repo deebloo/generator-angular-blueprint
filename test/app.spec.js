@@ -10,6 +10,7 @@ describe('angular-blueprint:app', function () {
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
+      .withArguments(['test'])
       .withPrompt({ appName: 'HelloWorld' })
       .on('end', done);
   });
