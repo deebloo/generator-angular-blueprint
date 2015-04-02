@@ -5,6 +5,7 @@ script:
   - npm test
   - npm install -g yo
   - npm install -g .
+  - npm install -g grunt-cli
   - mkdir ~/.config/ && mkdir ~/.config/configstore/
   - touch ~/.config/configstore/insight-yo.yml
   - echo "optOut":" true" >> ~/.config/configstore/insight-yo.yml
