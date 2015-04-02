@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - '0.12.2'
+  - '0.10.37'
 script:
   - npm test
   - npm install -g yo
