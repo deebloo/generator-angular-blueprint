@@ -59,7 +59,7 @@ function prompting() {
  */
 function app() {
   this.fs.copy(
-    this.templatePath('_.bowerrc'),
+    this.templatePath('.bowerrc'),
     this.destinationPath('.bowerrc')
   );
 
