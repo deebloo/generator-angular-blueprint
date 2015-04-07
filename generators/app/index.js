@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
  * @name init
  */
 function init() {
-  this.argument('appName', { type: String });
+  this.argument('appName', { type: String, required: false });
 }
 
 /**
@@ -59,49 +59,49 @@ function prompting() {
  */
 function app() {
   this.fs.copy(
-    this.templatePath('.bowerrc'),
+    this.templatePath('_.bowerrc'),
     this.destinationPath('.bowerrc')
   );
 
   this.fs.copy(
-    this.templatePath('.editorconfig'),
+    this.templatePath('_.editorconfig'),
     this.destinationPath('.editorconfig')
   );
 
   this.fs.copy(
-    this.templatePath('.gitattributes'),
+    this.templatePath('_.gitattributes'),
     this.destinationPath('.gitattributes')
   );
 
   this.fs.copy(
-    this.templatePath('.gitignore'),
+    this.templatePath('_.gitignore'),
     this.destinationPath('.gitignore')
   );
 
   this.fs.copy(
-    this.templatePath('.jshintrc'),
+    this.templatePath('_.jshintrc'),
     this.destinationPath('.jshintrc')
   );
 
   this.fs.copyTpl(
-    this.templatePath('bower.json'),
+    this.templatePath('_bower.json'),
     this.destinationPath('bower.json'),
     { appName: this._.camelize(this.config.get('appName')) }
   );
 
   this.fs.copy(
-    this.templatePath('Gruntfile.js'),
+    this.templatePath('_Gruntfile.js'),
     this.destinationPath('Gruntfile.js')
   );
 
   this.fs.copyTpl(
-    this.templatePath('package.json'),
+    this.templatePath('_package.json'),
     this.destinationPath('package.json'),
     { appName: this._.camelize(this.config.get('appName')) }
   );
 
   this.fs.copy(
-    this.templatePath('README.md'),
+    this.templatePath('_README.md'),
     this.destinationPath('README.md')
   );
 }
