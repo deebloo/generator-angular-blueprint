@@ -97,13 +97,15 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 9000,
-        hostname: '0.0.0.0',
+        hostname: '*',
         livereload: 35729
       },
       proxies: appConfig.proxy ? appConfig.proxyConfig : [],
       livereload: {
         options: {
-          open: true,
+          open: {
+            target: "http://localhost:9000"
+          },
           middleware: function (connect) {
             var middleware = [
               connect.static('.tmp'),
