@@ -2,8 +2,6 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-NOTE: JSDOCs seems to be having some potential issues with Node v0.12.2. Travis build updated to test 0.12.2.
-
 Angular js Generator for large scale applications. 
 
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
