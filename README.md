@@ -7,6 +7,7 @@ Angular js Generator for large scale applications.
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
 The goal is to have an out of the box scaffolding that will scale well for large complex applications.
 
+To see a sample generator project look [here](https://github.com/deebloo/angular-blueprint).
 
 Generator Angular Blueprint introducing the idea of blueprints to an angular scaffolding. It is now very simple to overwrite generator templates in your local project.
 Lots of Yeoman generators are out there, but what if you don't agree? You can fork the repo and make changes and install it on your own, OR, you can use generator-angular-blueprints.
