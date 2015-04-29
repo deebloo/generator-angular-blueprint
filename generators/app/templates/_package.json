@@ -2,7 +2,7 @@
   "name": "<%= appName %>",
   "version": "0.0.0",
   "devDependencies": {
-    "angular-jsdoc": "^0.3.2",
+    "angular-jsdoc": "~0.3.0",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-asset-injector": "^0.1.0",
