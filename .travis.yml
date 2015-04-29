@@ -13,8 +13,7 @@ script:
   - echo "optOut":" true" > ~/.config/configstore/insight-yo.yml
   - mkdir testAppDir && cd testAppDir
   - yo angular-blueprint myApp
-  - grunt test
-  - grunt build
+  - grunt
 notifications:
   email:
     - dannybluedesign@gmail.com
