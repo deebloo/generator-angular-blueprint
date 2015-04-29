@@ -66,14 +66,6 @@ var appConfig = {
   }]
 };
 ```
-###Visual Regression Testing
-This project contains a [spiffy framework](https://github.com/mhoffmeyerDC/grunt-phantomcss) for visual regression testing.
-You will need to install [PhantomJS](http://phantomjs.org/download.html) and [CasperJS](http://casperjs.org/) for your respective platform (OSX, *Nix, Win32). More information on writing CasperJS tasks is available at [CasperJS Documentation](http://casperjs.readthedocs.org/en/latest/modules/casper.html).
-
-```shell
-grunt visual
-```
-Will run the CasperJS `*.visual.js` task files in `client/test/visual`. The task will generate a set of baseline screenshots for reference; subsequent runs fail if there are any visual changes.
 
 ####Command Line Options
 Delete the images in `client/test/visual/results/baseline` to reset the test after visual changes are accepted.
