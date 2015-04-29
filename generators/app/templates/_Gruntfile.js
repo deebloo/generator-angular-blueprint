@@ -104,7 +104,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: {
-            target: "http://localhost:9000"
+            target: 'http://localhost:9000'
           },
           middleware: function (connect) {
             var middleware = [
@@ -160,7 +160,8 @@ module.exports = function (grunt) {
           '<%= appSettings.app %>/{,*/}*.js',
           '<%= appSettings.app %>/app/components**/{,*/}*.js',
           '<%= appSettings.app %>/app/services/{,*/}*.js',
-          '<%= appSettings.app %>/app/views/**/{,*/}*.js'
+          '<%= appSettings.app %>/app/views/**/{,*/}*.js',
+          '!<%= appSettings.app %>/app/{services,views,components}/**/*.spec.js'
         ]
       },
       test: {
@@ -568,20 +569,20 @@ module.exports = function (grunt) {
      * @description
      * Task runner for PhantomCSS - A visual regression testing tool
      */
-    phantomcss: {
-      options: {
-        cleanupComparisonImages: true
-      },
-      test: {
-        options: {
-          screenshots: 'client/test/visual/results/baseline/',
-          results: 'client/test/visual/results'
-        },
-        src: [
-          '<%= appSettings.app %>/test/visual**/{,*/}*.visual.js',
-        ]
-      }
-    }
+    //phantomcss: {
+    //  options: {
+    //    cleanupComparisonImages: true
+    //  },
+    //  test: {
+    //    options: {
+    //      screenshots: 'client/test/visual/results/baseline/',
+    //      results: 'client/test/visual/results'
+    //    },
+    //    src: [
+    //      '<%= appSettings.app %>/test/visual**/{,*/}*.visual.js',
+    //    ]
+    //  }
+    //}
   });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -616,21 +617,21 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
-  var visualTasks = [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'phantomcss'
-  ];
-
-  grunt.registerTask('visual',(function() {
-    if(grunt.option('clean')) {
-      visualTasks.unshift('clean:visual');
-    }
-
-    return visualTasks;
-  }()));
+  //var visualTasks = [
+  //  'clean:server',
+  //  'concurrent:test',
+  //  'autoprefixer',
+  //  'connect:test',
+  //  'phantomcss'
+  //];
+  //
+  //grunt.registerTask('visual',(function() {
+  //  if(grunt.option('clean')) {
+  //    visualTasks.unshift('clean:visual');
+  //  }
+  //
+  //  return visualTasks;
+  //}()));
 
   grunt.registerTask('test', [
     'clean:server',
