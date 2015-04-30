@@ -4,6 +4,14 @@
 
 Angular js Generator for large scale applications. 
 
+Prerequisites
+```
+npm install -g bower
+npm install -g yo
+(optional) npm install -g grunt-cli
+```
+All commands can be run with either grunt {command} or npm start {command}
+
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
 The goal is to have an out of the box scaffolding that will scale well for large complex applications.
 
