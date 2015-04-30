@@ -11,7 +11,7 @@ Angular js seed project based on [John Papa's AngularJS Style Guide](https://git
 
 Download the seed
 ```
-git clone https://github.com/DannyBlueDesign/angular-blueprint.git <projectName>
+git clone https://github.com/deebloo/angular-blueprint.git <projectName>
 cd <project-name>
 bower install && npm install
 ```
