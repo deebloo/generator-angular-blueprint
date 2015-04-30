@@ -19,7 +19,7 @@ To see a sample generated project look [here](https://github.com/deebloo/angular
 
 Generator Angular Blueprint introducing the idea of blueprints to an angular scaffolding. It is now very simple to overwrite generator templates in your local project.
 Lots of Yeoman generators are out there, but what if you don't agree? You can fork the repo and make changes and install it on your own, OR, you can use generator-angular-blueprints.
-Don't like the style of comments we have chosen? Use your own! Simply create a folder in your root project called "blueprints".
+Don't like the style of comments we have chosen? Use your own! Simply run the 'blueprint' generator to customize your own templates.
 
 ```
 npm install -g generator-angular-blueprint
