@@ -4,7 +4,6 @@ Angular-Blueprint
 Prerequisites
 ```
 npm install -g bower
-npm install -g yo
 (optional) npm install -g grunt-cli
 ```
 
