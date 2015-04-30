@@ -7,6 +7,7 @@
     "grunt-angular-templates": "^0.5.7",
     "grunt-asset-injector": "^0.1.0",
     "grunt-autoprefixer": "^2.2.0",
+    "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^1.0.0",
     "grunt-connect-proxy": "^0.2.0",
     "grunt-contrib-clean": "^0.6.0",
@@ -41,6 +42,7 @@
     "node": ">=0.12.2"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "node ./node_modules/grunt-cli/bin/grunt test",
+    "start": "node ./node_modules/grunt-cli/bin/grunt $*"
   }
 }
