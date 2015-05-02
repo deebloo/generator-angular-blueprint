@@ -1,7 +1,8 @@
 'use strict';
 
-var blueprints = require('../../lib/Blueprints'),
-    prompt     = require('../../lib/prompt-install-path');
+var blueprints = require('yeoman-blueprints'),
+    prompt     = require('../../lib/prompt-install-path'),
+    tplOptions = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
   init: init,
@@ -20,16 +21,9 @@ function init() {
  * @name writing
  */
 function writing() {
-  var tplOptions = {
-    appName: this._.camelize(this.config.get('appName')),
-    classedName: this._.classify(this.name),
-    cameledName: this._.camelize(this.name),
-    dashedName: this._.dasherize(this.name),
-    humanName: this._.humanize(this.name),
-    type: 'Controller'
-  };
+  var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
 
-  this.copyTpl('controller', 'js', tplOptions);
+  this.copyTpl('controller', 'js', values);
 
-  this.copyTpl('spec', 'js', tplOptions);
+  this.copyTpl('spec', 'js', values);
 }

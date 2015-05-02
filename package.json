@@ -28,6 +28,8 @@
   ],
   "dependencies": {
     "chalk": "^0.5.0",
+    "underscore.string": "^3.0.3",
+    "yeoman-blueprints": "0.0.5",
     "yeoman-generator": "^0.18.0",
     "yosay": "^0.3.0"
   },
