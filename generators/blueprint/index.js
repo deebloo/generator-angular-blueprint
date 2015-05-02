@@ -30,7 +30,7 @@ function prompting() {
       'router',
       'spec'
     ]
-  }, function promptSuccess(answers) {
+  }, function(answers) {
     this.blueprint = answers.blueprints;
 
     done();
@@ -48,9 +48,7 @@ function writing() {
     );
   }
 
-  var templateDir = __dirname + '!@#$'; // Mark the end of the string so it cn be easily replace below
-
-  templateDir = templateDir.replace('blueprint!@#$', this.blueprint + '/' + 'templates/');
+  var templateDir = __dirname + '/../' + this.blueprint + '/' + 'templates/'; // Mark the end of the string so it cn be easily replace below
 
   this.sourceRoot(templateDir); // manually set source root to the select generator type
 
