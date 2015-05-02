@@ -27,7 +27,7 @@ function prompting() {
       'service',
       'factory',
       'directive',
-      'router',
+      'route',
       'spec'
     ]
   }, function(answers) {

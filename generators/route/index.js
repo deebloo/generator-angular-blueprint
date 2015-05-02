@@ -32,7 +32,7 @@ function writing() {
 
   this.copyTpl('controller', 'js', tempOptions);
 
-  this.copyTpl('router', 'js', tempOptions);
+  this.copyTpl('route', 'js', tempOptions);
 
   this.copyTpl('spec', 'js', tempOptions);
 }

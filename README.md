@@ -50,7 +50,7 @@ yo angular-blueprint:blueprint
 4) service
 5) factory
 6) directive
-7) router
+7) route
 8) spec
 ```
 
