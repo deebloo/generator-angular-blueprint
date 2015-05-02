@@ -1,11 +1,11 @@
 'use strict';
 
-var yeoman = require('yeoman-generator');
-var blueprint = require('../../lib/blueprint');
+var blueprints = require('../../lib/Blueprints'),
+    prompt     = require('../../lib/prompt-install-path');
 
-module.exports = yeoman.generators.NamedBase.extend({
+module.exports = blueprints.NamedBase.extend({
   init: init,
-  prompting: blueprint.promptInstallPath,
+  prompting: prompt,
   writing: writing
 });
 
@@ -26,7 +26,7 @@ function writing() {
     type: 'factory'
   };
 
-  blueprint.copyTpl.call(this, 'factory', 'js', tempOptions);
+  this.copyTpl('factory', 'js', tempOptions);
 
-  blueprint.copyTpl.call(this, 'spec', 'js', tempOptions);
+  this.copyTpl('spec', 'js', tempOptions);
 }

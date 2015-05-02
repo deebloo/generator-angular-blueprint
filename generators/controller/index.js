@@ -1,11 +1,11 @@
 'use strict';
 
-var yeoman = require('yeoman-generator');
-var blueprint = require('../../lib/blueprint');
+var blueprints = require('../../lib/Blueprints'),
+    prompt     = require('../../lib/prompt-install-path');
 
-module.exports = yeoman.generators.NamedBase.extend({
+module.exports = blueprints.NamedBase.extend({
   init: init,
-  prompting: blueprint.promptInstallPath,
+  prompting: prompt,
   writing: writing
 });
 
@@ -20,7 +20,7 @@ function init() {
  * @name writing
  */
 function writing() {
-  var tempOptions = {
+  var tplOptions = {
     appName: this._.camelize(this.config.get('appName')),
     classedName: this._.classify(this.name),
     cameledName: this._.camelize(this.name),
@@ -29,7 +29,7 @@ function writing() {
     type: 'Controller'
   };
 
-  blueprint.copyTpl.call(this, 'controller', 'js', tempOptions);
+  this.copyTpl('controller', 'js', tplOptions);
 
-  blueprint.copyTpl.call(this, 'spec', 'js', tempOptions);
+  this.copyTpl('spec', 'js', tplOptions);
 }
