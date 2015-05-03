@@ -81,7 +81,7 @@ Produces:
 ```
 client/app/views/home/home.controller.js
 client/app/views/home/home.route.js
-client/app/views/home/home.spec.js
+client/app/views/home/home.controller.spec.js
 client/app/views/home/home.view.html
 client/app/views/home/home.view.scss
 ```
@@ -98,7 +98,7 @@ yo angular-blueprint:controller home
 Produces:
 ```
 client/app/views/home/home.controller.js
-client/app/views/home/home.spec.js
+client/app/views/home/home.controller.spec.js
 ```
 
 ### Factory
@@ -112,8 +112,8 @@ yo angular-blueprint:factory user
 ```
 Produces:
 ```
-client/app/services/user/user.factory.js
-client/app/services/user/user.spec.js
+client/app/services/user/user.service.js
+client/app/services/user/user.service.spec.js
 ```
 
 ### Directive
@@ -142,7 +142,7 @@ yo angular-blueprint:factory user
 Produces:
 ```
 client/app/services/user/user.service.js
-client/app/services/user/user.spec.js
+client/app/services/user/user.service.spec.js
 ```
 
 ### View
@@ -162,7 +162,7 @@ client/app/views/about/user.view.scss
 
 ## To contribute
 ```
-git clone https://github.com/DannyBlueDesign/generator-angular-blueprint.git
+git clone https://github.com/deebloo/generator-angular-blueprint.git
 ```
 
 To run tests
