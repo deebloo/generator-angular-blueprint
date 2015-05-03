@@ -3,6 +3,7 @@ node_js:
   - '0.12.2'
   - '0.10.36'
 install:
+  - npm cache clean
   - npm install
   - npm install -g yo
   - npm install -g .
