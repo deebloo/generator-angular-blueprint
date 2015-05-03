@@ -35,7 +35,7 @@ function writing() {
   this.copyTpl(
     'spec',
     fileType,
-    destination(this.destDirectory, this.name, 'spec', fileType),
+    destination(this.destDirectory, this.name, 'controller.spec', fileType),
     values
   );
 }

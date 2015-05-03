@@ -21,7 +21,7 @@ function init() {
 function writing() {
   var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
 
-  this.copyTpl('factory', 'js', destination(this.destDirectory, this.name, 'factory', 'js'), values);
+  this.copyTpl('factory', 'js', destination(this.destDirectory, this.name, 'service', 'js'), values);
 
-  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'spec', 'js'), values);
+  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'service.spec', 'js'), values);
 }

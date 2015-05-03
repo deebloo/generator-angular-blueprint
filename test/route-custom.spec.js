@@ -19,7 +19,7 @@ describe('AngularBlueprint:route - custom', function () {
       './foo/hello-world.style.scss',
       './foo/hello-world.controller.js',
       './foo/hello-world.route.js',
-      './foo/hello-world.spec.js'
+      './foo/hello-world.controller.spec.js'
     ]);
   });
 });

@@ -23,5 +23,5 @@ function writing() {
 
   this.copyTpl('service', 'js', destination(this.destDirectory, this.name, 'service', 'js'), values);
 
-  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'spec', 'js'), values);
+  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'service.spec', 'js'), values);
 }

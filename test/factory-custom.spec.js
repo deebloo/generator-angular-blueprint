@@ -15,8 +15,8 @@ describe('AngularBlueprint:factory - custom', function () {
 
   it('creates files', function () {
     assert.file([
-      './foo/bar/test.factory.js',
-      './foo/bar/test.spec.js'
+      './foo/bar/test.service.js',
+      './foo/bar/test.service.spec.js'
     ]);
   });
 });

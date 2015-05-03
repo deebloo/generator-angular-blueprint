@@ -16,7 +16,7 @@ describe('AngularBlueprint:service', function () {
   it('creates files', function () {
     assert.file([
       './client/app/services/test/test.service.js',
-      './client/app/services/test/test.spec.js'
+      './client/app/services/test/test.service.spec.js'
     ]);
   });
 });

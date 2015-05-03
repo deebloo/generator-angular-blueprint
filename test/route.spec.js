@@ -19,7 +19,7 @@ describe('AngularBlueprint:route', function () {
       './client/app/views/hello-world/hello-world.style.scss',
       './client/app/views/hello-world/hello-world.controller.js',
       './client/app/views/hello-world/hello-world.route.js',
-      './client/app/views/hello-world/hello-world.spec.js'
+      './client/app/views/hello-world/hello-world.controller.spec.js'
     ]);
   });
 });
