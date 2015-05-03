@@ -1,8 +1,9 @@
 'use strict';
 
-var blueprints = require('yeoman-blueprints'),
-    prompt     = require('../../lib/prompt-install-path'),
-    tplOptions = require('../../lib/tpl-options');
+var blueprints  = require('yeoman-blueprints'),
+    prompt      = require('../../lib/prompt-install-path'),
+    destination = require('../../lib/destination'),
+    tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
   init: init,
@@ -20,7 +21,7 @@ function init() {
 function writing() {
   var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
 
-  this.copyTpl('service', 'js', values);
+  this.copyTpl('service', 'js', destination(this.destDirectory, this.name, 'service', 'js'), values);
 
-  this.copyTpl('spec', 'js', values);
+  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'spec', 'js'), values);
 }

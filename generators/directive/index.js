@@ -2,6 +2,7 @@
 
 var blueprints = require('yeoman-blueprints'),
     prompt     = require('../../lib/prompt-install-path'),
+    destination = require('../../lib/destination'),
     tplOptions = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
@@ -20,5 +21,5 @@ function init() {
 function writing() {
   var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
 
-  this.copyTpl('directive', 'js', values);
+  this.copyTpl('directive', 'js', destination(this.destDirectory, this.name, 'directive', 'js'), values);
 }
