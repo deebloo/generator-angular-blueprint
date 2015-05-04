@@ -1,9 +1,9 @@
 'use strict';
 
-var blueprints = require('yeoman-blueprints'),
-    prompt     = require('../../lib/prompt-install-path'),
+var blueprints  = require('yeoman-blueprints'),
+    prompt      = require('../../lib/prompt-install-path'),
     destination = require('../../lib/destination'),
-    tplOptions = require('../../lib/tpl-options');
+    tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
   init: init,
