@@ -80,8 +80,8 @@ yo angular-blueprint:route home
 Produces:
 ```
 client/app/views/home/home.controller.js
-client/app/views/home/home.route.js
 client/app/views/home/home.controller.spec.js
+client/app/views/home/home.route.js
 client/app/views/home/home.view.html
 client/app/views/home/home.view.scss
 ```
