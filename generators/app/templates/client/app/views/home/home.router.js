@@ -10,7 +10,7 @@
           url: '/',
           templateUrl: 'app/views/home/home.view.html',
           controller: 'HomeCtrl',
-          controllerAs: 'home',
+          controllerAs: 'HomeCtrl',
           title: 'home'
         });
     });

@@ -3,7 +3,7 @@
 /**
  * @ngdoc Controller
  *
- * @name <%= appName %>.controller:ApplicationCtrl
+ * @name <%= appName %>.controller:AppCtrl
  *
  * @description
  * The main application Controller for <%= appName %>
@@ -12,9 +12,9 @@
 
   angular
     .module('<%= appName %>')
-    .controller('ApplicationCtrl', ApplicationCtrl);
+    .controller('AppCtrl', AppCtrl);
 
-  function ApplicationCtrl($rootScope) {
+  function AppCtrl($rootScope) {
     var vm = this;
 
     vm.title = 'My App'; // Default Title

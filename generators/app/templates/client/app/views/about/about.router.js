@@ -10,7 +10,7 @@
           url: '/about',
           templateUrl: 'app/views/about/about.view.html',
           controller: 'AboutCtrl',
-          controllerAs: 'about',
+          controllerAs: 'AboutCtrl',
           title: 'about'
         });
     });

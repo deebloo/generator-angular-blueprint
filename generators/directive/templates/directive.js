@@ -3,10 +3,10 @@
 /**
  * @ngdoc Directive
  *
- * @name <%= appName %>.service:<%= cameledName %>
+ * @name <%= appName %>.directive:<%= cameledName %>
  *
  * @description
- * <%= appName %>.directive:<%= cameledName %>
+ * directive for <%= appName %>
  */
 (function() {
 
