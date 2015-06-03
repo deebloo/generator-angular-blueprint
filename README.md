@@ -136,7 +136,7 @@ Generates a new Angular Service
 
 Example:
 ```
-yo angular-blueprint:factory user
+yo angular-blueprint:service user
 [?] Where should I generate "user"? (./client/app/services/user)
 ```
 Produces:
