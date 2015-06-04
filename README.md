@@ -1,4 +1,4 @@
-# generator-angular-blueprint [![Build Status](https://travis-ci.org/deebloo/generator-angular-blueprint.svg?branch=1.2.0)](https://travis-ci.org/deebloo/generator-angular-blueprint)
+# generator-angular-blueprint [![Build Status](https://travis-ci.org/deebloo/generator-angular-blueprint.svg?branch=1.2.2)](https://travis-ci.org/deebloo/generator-angular-blueprint)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -136,7 +136,7 @@ Generates a new Angular Service
 
 Example:
 ```
-yo angular-blueprint:factory user
+yo angular-blueprint:service user
 [?] Where should I generate "user"? (./client/app/services/user)
 ```
 Produces:
