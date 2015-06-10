@@ -1,4 +1,5 @@
 'use strict';
+
 describe('<%= type %>:<%= cameledName %>', function () {
 
   // load the module

@@ -15,7 +15,8 @@ describe('AngularBlueprint:directive', function () {
 
   it('creates files', function () {
     assert.file([
-      './client/app/components/test/test.directive.js'
+      './client/app/components/test/test.directive.js',
+      './client/app/components/test/test.directive.spec.js'
     ]);
   });
 });

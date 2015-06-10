@@ -1,25 +1,22 @@
 'use strict';
 
-var blueprints = require('yeoman-blueprints'),
-    prompt     = require('../../lib/prompt-install-path'),
+var blueprints  = require('yeoman-blueprints'),
+    prompt      = require('../../lib/prompt-install-path'),
     destination = require('../../lib/destination'),
-    tplOptions = require('../../lib/tpl-options');
+    tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
-  init: init,
+  init: function () {
+    this.destPath = './client/app/components/';
+  },
+
   prompting: prompt,
-  writing: writing
+
+  writing: function () {
+    var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
+
+    this.copyTpl('directive', 'js', destination(this.destDirectory, this.name, 'directive', 'js'), values);
+
+    this.copyTpl('directive-spec', 'js', destination(this.destDirectory, this.name, 'directive.spec', 'js'), values);
+  }
 });
-
-function init() {
-  this.destPath = './client/app/components/';
-}
-
-/**
- * @name writing
- */
-function writing() {
-  var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
-
-  this.copyTpl('directive', 'js', destination(this.destDirectory, this.name, 'directive', 'js'), values);
-}

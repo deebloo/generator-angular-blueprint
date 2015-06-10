@@ -1,4 +1,5 @@
 'use strict';
+
 describe('<%= type %>:<%= classedName %>Ctrl', function () {
 
   // load the module
