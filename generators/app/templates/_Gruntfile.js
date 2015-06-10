@@ -127,11 +127,6 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
-              connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
               connect.static(appConfig.app)
             ];
           }
@@ -560,29 +555,10 @@ module.exports = function (grunt) {
      */
     karma: {
       unit: {
-        configFile: '<%= appSettings.app %>/test/karma.conf.js',
+        configFile: '<%= appSettings.app %>/karma.conf.js',
         singleRun: true
       }
-    },
-
-    /**
-     * @description
-     * Task runner for PhantomCSS - A visual regression testing tool
-     */
-    //phantomcss: {
-    //  options: {
-    //    cleanupComparisonImages: true
-    //  },
-    //  test: {
-    //    options: {
-    //      screenshots: 'client/test/visual/results/baseline/',
-    //      results: 'client/test/visual/results'
-    //    },
-    //    src: [
-    //      '<%= appSettings.app %>/test/visual**/{,*/}*.visual.js',
-    //    ]
-    //  }
-    //}
+    }
   });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -608,30 +584,10 @@ module.exports = function (grunt) {
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('foo', function() {
-    grunt.log.write('test');
-  });
-
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
-
-  //var visualTasks = [
-  //  'clean:server',
-  //  'concurrent:test',
-  //  'autoprefixer',
-  //  'connect:test',
-  //  'phantomcss'
-  //];
-  //
-  //grunt.registerTask('visual',(function() {
-  //  if(grunt.option('clean')) {
-  //    visualTasks.unshift('clean:visual');
-  //  }
-  //
-  //  return visualTasks;
-  //}()));
 
   grunt.registerTask('test', [
     'clean:server',

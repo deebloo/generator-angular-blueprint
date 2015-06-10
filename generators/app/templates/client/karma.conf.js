@@ -10,9 +10,6 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '../',
-
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
@@ -31,8 +28,7 @@ module.exports = function(config) {
       '*.js',
       'app/components/**/*.js',
       'app/views/**/*.js',
-      'app/services/**/*.js',
-      //'test/mock/**/*.js',
+      'app/services/**/*.js'
     ],
 
     // list of files / patterns to exclude
