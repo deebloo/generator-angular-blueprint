@@ -27,7 +27,7 @@ npm install -g generator-angular-blueprint
 
 ## Generators
 
-### APP
+### App
 
 Generates the main application scaffolding
 
@@ -44,14 +44,17 @@ Example:
 ```
 yo angular-blueprint:blueprint
 [?] Which blueprint would you like to create?
-1) controller
-2) view
-3) style
-4) service
-5) factory
-6) directive
-7) route
-8) spec
+1)  controller
+2)  controller-spec
+3)  view
+4)  style
+5)  service
+6)  service-spec
+7)  factory
+8)  factory-spec
+9)  directive
+10) directive-spec
+11) route
 ```
 
 Produces:
@@ -113,8 +116,8 @@ yo angular-blueprint:factory user
 ```
 Produces:
 ```
-client/app/services/user/user.service.js
-client/app/services/user/user.service.spec.js
+client/app/services/user/user.factory.js
+client/app/services/user/user.factory.spec.js
 ```
 
 ### Directive
@@ -129,6 +132,7 @@ yo angular-blueprint:directive nav
 Produces:
 ```
 client/app/components/nav/nav.directive.js
+client/app/components/nav/nav.directive.spec.js
 ```
 
 ### Service
@@ -144,6 +148,21 @@ Produces:
 ```
 client/app/services/user/user.service.js
 client/app/services/user/user.service.spec.js
+```
+
+### Filter
+
+Generates a new Angular Filter
+
+Example:
+```
+yo angular-blueprint:filter reverse
+[?] Where should I generate "reverse"? (./client/app/filters/reverse)
+```
+Produces:
+```
+client/app/filters/reverse/user.filter.js
+client/app/filters/reverse/user.filter.spec.js
 ```
 
 ### View
