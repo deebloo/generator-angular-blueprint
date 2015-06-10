@@ -10,10 +10,8 @@ install:
   - npm install -g bower
 script:
   - npm test
-  - mkdir -p ~/.config/configstore/
-  - echo "optOut":" true" > ~/.config/configstore/insight-yo.yml
   - mkdir testAppDir && cd testAppDir
-  - yo angular-blueprint myApp
+  - yo echo Y | angular-blueprint myApp
   - grunt
 notifications:
   email:
