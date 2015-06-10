@@ -5,9 +5,9 @@ describe('<%= type %>:<%= cameledName %>', function () {
   // load the filter's module
   beforeEach(module('<%= appName %>'));
 
-  // initialize a new instance of the filter before each test
   var <%= cameledName %>;
 
+  // initialize a new instance of the filter before each test
   beforeEach(inject(function ($injector) {
     <%= cameledName %> = $injector.get('$filter')('<%= cameledName %>');
   }));
