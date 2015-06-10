@@ -22,13 +22,15 @@ function prompting() {
     message: 'Which blueprint would you like to create?',
     choices: [
       'controller',
+      'controller-spec',
+      'service',
+      'service-spec',
+      'factory',
+      'factory-spec',
+      'directive',
       'view',
       'style',
-      'service',
-      'factory',
-      'directive',
-      'route',
-      'spec'
+      'route'
     ]
   }, function(answers) {
     this.blueprint = answers.blueprints;
