@@ -4,19 +4,18 @@ var path = require('path');
 var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 
-describe('AngularBlueprint:factory', function () {
+describe('AngularBlueprint:filter', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/factory'))
+    helpers.run(path.join(__dirname, '../generators/filter'))
       .withArguments(['test'])
       .withPrompt({ 'directory': false })
-      .withOptions({ 'skip-install': true })
+      .withOptions({ 'skip-install': true})
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      './client/app/services/test/test.factory.js',
-      './client/app/services/test/test.factory.spec.js'
+      './client/app/views/test/test.filter.js'
     ]);
   });
 });

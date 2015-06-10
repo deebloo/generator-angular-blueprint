@@ -26,17 +26,9 @@ function writing() {
       fileType = 'js';
 
   this.copyTpl(
-    'controller',
+    'filter',
     fileType,
-    destination(this.destDirectory, this.name, 'controller', fileType),
-    values
-  );
-
-  this.copyTpl(
-    'controller-spec',
-    fileType,
-    destination(this.destDirectory, this.name, 'controller.spec', fileType),
+    destination(this.destDirectory, this.name, 'filter', fileType),
     values
   );
 }
-

@@ -29,5 +29,5 @@ function writing() {
 
   this.copyTpl('route', 'js', destination(this.destDirectory, this.name, 'route', 'js'), values);
 
-  this.copyTpl('spec', 'js', destination(this.destDirectory, this.name, 'controller.spec', 'js'), values);
+  this.copyTpl('controller-spec', 'js', destination(this.destDirectory, this.name, 'controller.spec', 'js'), values);
 }

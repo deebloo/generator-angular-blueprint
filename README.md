@@ -63,6 +63,7 @@ The following template values are passed in to each template and are available f
 ```
 <%= appName %> // myApp
 <%= classedName %> // ClassedName
+<%= cameledName %> // cameledName,
 <%= dashedName %> // dashed-name
 <%= humanName %> // human name
 <%= type %> // {controller|factory|service|directive}
