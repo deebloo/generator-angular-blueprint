@@ -11,7 +11,7 @@ install:
 script:
   - npm test
   - mkdir testAppDir && cd testAppDir
-  - yo echo Y | angular-blueprint myApp
+  - echo Y | yo angular-blueprint myApp
   - grunt
 notifications:
   email:
