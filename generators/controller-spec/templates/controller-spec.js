@@ -9,7 +9,7 @@ describe('<%= type %>:<%= classedName %>Ctrl', function () {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($injector) {
-    <%= classedName % > Ctrl = $injector.get('$controller')('<%= classedName %>Ctrl');
+    <%= classedName %>Ctrl = $injector.get('$controller')('<%= classedName %>Ctrl');
   }));
 
   it('condition of test', function () {

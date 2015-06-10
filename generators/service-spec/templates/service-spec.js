@@ -9,7 +9,7 @@ describe('<%= type %>:<%= cameledName %>', function () {
 
   // initialize a new instance of the service before each test
   beforeEach(inject(function ($injector) {
-    <%= cameledName % > = $injector.get('<%= cameledName %>');
+    <%= cameledName %> = $injector.get('<%= cameledName %>');
   }));
 
   it('condition of test', function () {
