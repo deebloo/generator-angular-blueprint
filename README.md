@@ -192,7 +192,7 @@ npm tests
 ```
 
 To rum the full test suite (runs the unit tests as well as testing the generator end to end).
-This is the same tests that are run on tavis
+This is the same tests that are run on circle ci
 ```
 sh test.sh
 ```
