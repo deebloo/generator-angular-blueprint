@@ -37,6 +37,8 @@ yo angular-blueprint:blueprint service-spec
 
 generators 2
 
+npm install && bower install
+
 grunt
 
 cd ..
