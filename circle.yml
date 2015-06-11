@@ -1,0 +1,25 @@
+########################
+# Customize the test machine
+########################
+machine:
+  # Version of ruby to use
+  node:
+    version:
+      0.12.2
+
+########################
+# Customize dependencies
+########################
+dependencies:
+  pre:
+    - npm install -g bower
+    - npm intall -g grunt-cli
+    - npm install -g yo
+    - npm install -g .
+
+########################
+# Customize test commands
+########################
+test:
+  override:
+    - sh test.sh
