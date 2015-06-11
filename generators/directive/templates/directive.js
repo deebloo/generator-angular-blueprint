@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc Directive
+ * @ngdoc directive
  *
  * @name <%= appName %>.directive:<%= cameledName %>
  *

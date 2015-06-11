@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc Controller
+ * @ngdoc controller
  *
  * @name <%= appName %>.controller:<%= classedName %>
  *

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * @ngdoc Service
+ * @ngdoc factory
  *
- * @name <%= appName %>.service:<%= cameledName %>
+ * @name <%= appName %>.factory:<%= cameledName %>
  *
  * @description
  * Factory for <%= appName %>

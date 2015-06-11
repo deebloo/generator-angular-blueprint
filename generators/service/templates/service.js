@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc Service
+ * @ngdoc service
  *
  * @name <%= appName %>.service:<%= cameledName %>
  *

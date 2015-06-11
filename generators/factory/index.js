@@ -13,7 +13,7 @@ module.exports = blueprints.NamedBase.extend({
   prompting: prompt,
 
   writing: function () {
-    var values = tplOptions(this.config.get('appName'), 'Factory', this.name);
+    var values = tplOptions(this.config.get('appName'), 'factory', this.name);
 
     this.copyTpl('factory', 'js', destination(this.destDirectory, this.name, 'factory', 'js'), values);
 

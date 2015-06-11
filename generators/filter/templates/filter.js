@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc Filter
+ * @ngdoc filter
  *
  * @name <%= appName %>.filter:<%= cameledName %>
  *
