@@ -12,11 +12,9 @@ generators () {
 APPDIR=testApp
 
 npm test
-mkdir .testApp && cd .testApp
+mkdir $APPDIR && cd $APPDIR
 
-echo | yo angular-blueprint
-
-echo
+echo | yo angular-blueprint myApp
 
 generators 1
 
@@ -40,4 +38,4 @@ generators 2
 grunt
 
 cd ..
-rm -rf .testApp
+rm -rf $APPDIR
