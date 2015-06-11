@@ -6,22 +6,18 @@ var blueprints  = require('yeoman-blueprints'),
     tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
-  init: init,
+  init: function init() {
+    this.destPath = './client/app/services/';
+  },
+
   prompting: prompt,
-  writing: writing
+
+  writing: function () {
+    var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
+
+    this.copyTpl('service', 'js', destination(this.destDirectory, this.name, 'service', 'js'), values);
+
+    this.copyTpl('service-spec', 'js', destination(this.destDirectory, this.name, 'service.spec', 'js'), values);
+  }
+
 });
-
-function init() {
-  this.destPath = './client/app/services/';
-}
-
-/**
- * @name writing
- */
-function writing() {
-  var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
-
-  this.copyTpl('service', 'js', destination(this.destDirectory, this.name, 'service', 'js'), values);
-
-  this.copyTpl('service-spec', 'js', destination(this.destDirectory, this.name, 'service.spec', 'js'), values);
-}

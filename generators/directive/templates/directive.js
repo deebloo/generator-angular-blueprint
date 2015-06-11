@@ -22,7 +22,7 @@
         link: link
     };
 
-    function link(scope, el) {
+    function link() {
     }
   }
 

@@ -6,28 +6,24 @@ var blueprints  = require('yeoman-blueprints'),
     tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
-  init: init,
+  init: function () {
+    this.destPath = './client/app/views/';
+  },
+
   prompting: prompt,
-  writing: writing
+
+  writing: function () {
+    var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
+
+    this.copyTpl('view', 'html', destination(this.destDirectory, this.name, 'view', 'html'), values);
+
+    this.copyTpl('style', 'scss', destination(this.destDirectory, this.name, 'style', 'scss'), values);
+
+    this.copyTpl('controller', 'js', destination(this.destDirectory, this.name, 'controller', 'js'), values);
+
+    this.copyTpl('route', 'js', destination(this.destDirectory, this.name, 'route', 'js'), values);
+
+    this.copyTpl('controller-spec', 'js', destination(this.destDirectory, this.name, 'controller.spec', 'js'), values);
+  }
+
 });
-
-function init() {
-  this.destPath = './client/app/views/';
-}
-
-/**
- * @name writing
- */
-function writing() {
-  var values = tplOptions(this.config.get('appName'), 'Controller', this.name);
-
-  this.copyTpl('view', 'html', destination(this.destDirectory, this.name, 'view', 'html'), values);
-
-  this.copyTpl('style', 'scss', destination(this.destDirectory, this.name, 'style', 'scss'), values);
-
-  this.copyTpl('controller', 'js', destination(this.destDirectory, this.name, 'controller', 'js'), values);
-
-  this.copyTpl('route', 'js', destination(this.destDirectory, this.name, 'route', 'js'), values);
-
-  this.copyTpl('controller-spec', 'js', destination(this.destDirectory, this.name, 'controller.spec', 'js'), values);
-}

@@ -9,7 +9,9 @@ module.exports = blueprints.NamedBase.extend({
   init: function () {
     this.destPath = './client/app/views/';
   },
+
   prompting: prompt,
+
   writing: function () {
     var values   = tplOptions(this.config.get('appName'), 'Controller', this.name),
       fileType = 'js';
