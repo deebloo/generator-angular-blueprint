@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 generators () {
     echo | yo angular-blueprint:controller foo$1
@@ -12,6 +12,7 @@ generators () {
 APPDIR=.testApp
 
 npm test
+npm install -g grunt-cli
 npm install -g .
 mkdir $APPDIR && cd $APPDIR
 
@@ -36,7 +37,7 @@ yo angular-blueprint:blueprint service-spec
 
 generators 2
 
-npm start
+grunt
 
 cd ..
 rm -rf $APPDIR
