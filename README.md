@@ -1,4 +1,4 @@
-# generator-angular-blueprint [![Build Status](https://circleci.com/gh/deebloo/generator-angular-blueprint.png?circle-token=b5f2519075910369fd15a0cf28251f097f336ca5)]
+# generator-angular-blueprint ![Build Status](https://circleci.com/gh/deebloo/generator-angular-blueprint.png?style=shield&circle-token=b5f2519075910369fd15a0cf28251f097f336ca5)
 
 
 > [Yeoman](http://yeoman.io) generator
