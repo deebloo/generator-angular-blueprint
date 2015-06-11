@@ -9,10 +9,8 @@ generators () {
     echo | yo angular-blueprint:service fooBaz$1
 }
 
-APPDIR=.testApp
-
 npm test
-mkdir $APPDIR && cd $APPDIR
+mkdir .testApp && cd .testApp
 
 echo myApp | yo angular-blueprint
 
@@ -38,4 +36,4 @@ generators 2
 grunt
 
 cd ..
-rm -rf $APPDIR
+rm -rf .testApp
