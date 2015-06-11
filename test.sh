@@ -1,5 +1,7 @@
 #!/bin/bash
 
+APPDIR=".testApp"
+
 generators () {
     echo | yo angular-blueprint:controller foo$1
     echo | yo angular-blueprint:directive bar$1
@@ -9,9 +11,10 @@ generators () {
     echo | yo angular-blueprint:service fooBaz$1
 }
 
-APPDIR=testApp
-
+echo "Run unit tests"
 npm test
+
+echo "Create the temporary app directory"
 mkdir $APPDIR && cd $APPDIR
 
 echo | yo angular-blueprint myApp
