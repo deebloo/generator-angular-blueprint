@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function generators {
+generators {
     echo | yo angular-blueprint:controller foo$1
     echo | yo angular-blueprint:directive bar$1
     echo | yo angular-blueprint:factory baz$1
