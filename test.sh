@@ -14,13 +14,12 @@ APPDIR=.testApp
 npm test
 mkdir $APPDIR && cd $APPDIR
 
-echo | yo angular-blueprint
+echo myApp | yo angular-blueprint
 
 generators 1
 
 yo angular-blueprint:blueprint controller
-yo angular-blueprint:blueprint controller-specclear
-g
+yo angular-blueprint:blueprint controller-spec
 
 yo angular-blueprint:blueprint directive
 yo angular-blueprint:blueprint directive-spec
