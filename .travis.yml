@@ -11,7 +11,7 @@ install:
 script:
   - npm test
   - mkdir testAppDir && cd testAppDir
-  - echo Yes | yo angular-blueprint myApp
+  - echo | yo angular-blueprint myApp
   - echo | yo angular-blueprint:controller helloWorld
   - echo | yo angular-blueprint:directive foo
   - echo | yo angular-blueprint:factory bar
