@@ -2,11 +2,9 @@ language: node_js
 node_js:
   - '0.12.2'
 install:
-  - npm cache clean
   - npm install
   - npm install -g yo
   - npm install -g .
-  - npm install -g grunt-cli
   - npm install -g bower
 script:
   - npm test
@@ -18,7 +16,7 @@ script:
   - echo | yo angular-blueprint:filter baz
   - echo | yo angular-blueprint:route fooBar
   - echo | yo angular-blueprint:service barBaz
-  - grunt
+  - npm start
 notifications:
   email:
     - dannybluedesign@gmail.com
