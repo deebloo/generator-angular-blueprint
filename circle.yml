@@ -12,6 +12,7 @@ machine:
 ########################
 dependencies:
   pre:
+    - npm install -g npm
     - npm install -g bower
     - npm install -g grunt-cli
     - npm install -g yo
