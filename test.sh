@@ -18,6 +18,8 @@ mkdir $APPDIR && cd $APPDIR
 
 echo | yo angular-blueprint
 
+npm install && bower install
+
 generators 1
 
 yo angular-blueprint:blueprint controller
