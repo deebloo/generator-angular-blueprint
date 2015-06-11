@@ -1,4 +1,5 @@
-# generator-angular-blueprint [![Build Status](https://travis-ci.org/deebloo/generator-angular-blueprint.svg?branch=master)](https://travis-ci.org/deebloo/generator-angular-blueprint)
+# generator-angular-blueprint [![Build Status](https://circleci.com/gh/deebloo/generator-angular-blueprint.png?circle-token=b5f2519075910369fd15a0cf28251f097f336ca5)]
+
 
 > [Yeoman](http://yeoman.io) generator
 
