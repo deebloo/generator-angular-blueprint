@@ -9,6 +9,8 @@ generators () {
     echo | yo angular-blueprint:service fooBaz$1
 }
 
+APPDIR=testApp
+
 npm test
 mkdir .testApp && cd .testApp
 
