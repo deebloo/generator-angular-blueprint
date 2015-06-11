@@ -7,16 +7,7 @@ install:
   - npm install -g .
   - npm install -g bower
 script:
-  - npm test
-  - mkdir testAppDir && cd testAppDir
-  - echo | yo angular-blueprint myApp
-  - echo | yo angular-blueprint:controller helloWorld
-  - echo | yo angular-blueprint:directive foo
-  - echo | yo angular-blueprint:factory bar
-  - echo | yo angular-blueprint:filter baz
-  - echo | yo angular-blueprint:route fooBar
-  - echo | yo angular-blueprint:service barBaz
-  - npm start
+  - sh test.sh
 notifications:
   email:
     - dannybluedesign@gmail.com

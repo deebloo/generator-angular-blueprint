@@ -5,34 +5,43 @@ var yeoman = require('yeoman-generator'),
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
+    this.argument('blueprintName', { type: String, required: false });
+
     this.destPath = './blueprints';
   },
 
   prompting: function prompting() {
     var done = this.async();
 
-    this.prompt({
-      type   : 'list',
-      name   : 'blueprints',
-      message: 'Which blueprint would you like to create?',
-      choices: [
-        'controller',
-        'controller-spec',
-        'service',
-        'service-spec',
-        'factory',
-        'factory-spec',
-        'directive',
-        'directive-spec',
-        'route',
-        'view',
-        'style'
-      ]
-    }, function (answers) {
-      this.blueprint = answers.blueprints;
+    if(this.blueprintName) {
+      this.blueprint = this.blueprintName;
 
       done();
-    }.bind(this));
+    }
+    else {
+      this.prompt({
+        type   : 'list',
+        name   : 'blueprints',
+        message: 'Which blueprint would you like to create?',
+        choices: [
+          'controller',
+          'controller-spec',
+          'service',
+          'service-spec',
+          'factory',
+          'factory-spec',
+          'directive',
+          'directive-spec',
+          'route',
+          'view',
+          'style'
+        ]
+      }, function (answers) {
+        this.blueprint = answers.blueprints;
+
+        done();
+      }.bind(this));
+    }
   },
 
   writing: function writing() {

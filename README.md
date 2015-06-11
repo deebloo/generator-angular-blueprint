@@ -185,9 +185,15 @@ client/app/views/about/user.view.scss
 git clone https://github.com/deebloo/generator-angular-blueprint.git
 ```
 
-To run tests
+To run unit tests
 ```
 npm tests
+```
+
+To rum the full test suite (runs the unit tests as well as testing the generator end to end).
+This is the same tests that are run on tavis
+```
+sh test.sh
 ```
 
 To install generator

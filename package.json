@@ -13,7 +13,8 @@
     "node": ">=0.12.2"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "full-test": "bash ./test.sh"
   },
   "main": "app/index.js",
   "files": [
