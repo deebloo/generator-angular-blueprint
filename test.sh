@@ -14,7 +14,9 @@ APPDIR=testApp
 npm test
 mkdir .testApp && cd .testApp
 
-echo myApp | yo angular-blueprint
+echo | yo angular-blueprint
+
+echo
 
 generators 1
 
