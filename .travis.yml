@@ -12,6 +12,7 @@ script:
   - npm test
   - mkdir testAppDir && cd testAppDir
   - echo Yes | yo angular-blueprint myApp
+  - echo | yo angular-blueprint:controller helloWorld
   - grunt
 notifications:
   email:
