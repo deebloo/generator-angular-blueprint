@@ -4,7 +4,8 @@ describe('<%= type %>:<%= dashedName %>', function () {
 
   // load the directive's module and view
   beforeEach(module('<%= appName %>'));
-  beforeEach(module('components/<%= dashedName %>/<%= dashedName %>.html'));
+  // Uncomment if template used
+  // beforeEach(module('components/<%= dashedName %>/<%= dashedName %>.html'));
 
   var element, scope;
 
@@ -15,9 +16,9 @@ describe('<%= type %>:<%= dashedName %>', function () {
 
   // compile the element to be tested
   it('should be a thing', inject(function ($compile) {
-    element = angular.element('<<%= dashedName %>></<%= dashedName %>>');
-    element = $compile(element)(scope);
+    // element = angular.element('<<%= dashedName %>></<%= dashedName %>>');
+    // element = $compile(element)(scope);
 
-    scope.$apply();
+    // scope.$apply();
   }));
 });
