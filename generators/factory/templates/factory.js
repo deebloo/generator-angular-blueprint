@@ -15,7 +15,7 @@
     .factory('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {
-
+    return { };
   }
 
 }());
