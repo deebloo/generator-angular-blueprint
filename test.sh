@@ -12,18 +12,15 @@ generators () {
 APPDIR=.testApp
 
 npm test
-npm install -g grunt-cli
-npm install -g .
 mkdir $APPDIR && cd $APPDIR
 
 echo | yo angular-blueprint
 
-npm install && bower install
-
 generators 1
 
 yo angular-blueprint:blueprint controller
-yo angular-blueprint:blueprint controller-spec
+yo angular-blueprint:blueprint controller-specclear
+g
 
 yo angular-blueprint:blueprint directive
 yo angular-blueprint:blueprint directive-spec
