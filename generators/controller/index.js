@@ -14,7 +14,7 @@ module.exports = blueprints.NamedBase.extend({
 
   writing: function () {
     var values   = tplOptions(this.config.get('appName'), 'controller', this.name),
-      fileType = 'js';
+        fileType = 'js';
 
     this.copyTpl(
       'controller',
