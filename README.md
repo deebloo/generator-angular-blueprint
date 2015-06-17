@@ -181,6 +181,20 @@ client/app/views/about/user.view.html
 client/app/views/about/user.view.scss
 ```
 
+## Unit Testing
+
+```
+npm test
+```
+Angular blueprint sets up Karma and Jasmine for your to run and write unit tests. It also includes a code coverage tool called Istanbul that will great a static website showing how much of your application is unit tested.
+
+## Documentation
+
+```
+npm start jsdoc
+```
+Angular blueprint includes JSDOCs for automated documentation. Follow the JSDOCs style of comments and and you will have your basic documentation generated for you.
+
 ## To contribute
 ```
 git clone https://github.com/deebloo/generator-angular-blueprint.git
@@ -188,7 +202,7 @@ git clone https://github.com/deebloo/generator-angular-blueprint.git
 
 To run unit tests
 ```
-npm tests
+npm test
 ```
 
 To rum the full test suite (runs the unit tests as well as testing the generator end to end).
