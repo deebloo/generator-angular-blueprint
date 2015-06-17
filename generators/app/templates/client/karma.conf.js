@@ -45,15 +45,27 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: [
-      'PhantomJS'
-    ],
+    browsers: ['PhantomJS'],
 
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine'
     ],
+
+    preprocessors: {
+      'app/*.html': 'html2js',
+      'app/components/**/!(*spec).js': ['coverage'],
+      'app/services/**/!(*spec).js': ['coverage'],
+      'app/views/**/!(*spec).js': ['coverage']
+    },
+
+    reporters: ['coverage', 'progress'],
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
