@@ -50,7 +50,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-coverage'
     ],
 
     preprocessors: {
@@ -64,7 +65,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       type : 'html',
-      dir : 'coverage/'
+      dir : '../coverage/'
     },
 
     // Continuous Integration mode

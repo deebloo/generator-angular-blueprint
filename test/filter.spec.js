@@ -15,7 +15,8 @@ describe('AngularBlueprint:filter', function () {
 
   it('creates files', function () {
     assert.file([
-      './client/app/filters/test/test.filter.js'
+      './client/app/filters/test/test.filter.js',
+      './client/app/filters/test/test.filter.spec.js'
     ]);
   });
 });

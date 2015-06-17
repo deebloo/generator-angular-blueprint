@@ -41,4 +41,5 @@ generators 2
 grunt
 
 cd ..
-rm -rf $APPDIR
+
+#rm -rf $APPDIR

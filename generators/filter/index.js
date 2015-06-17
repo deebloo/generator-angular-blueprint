@@ -14,12 +14,19 @@ module.exports = blueprints.NamedBase.extend({
 
   writing: function () {
     var values   = tplOptions(this.config.get('appName'), 'filter', this.name),
-      fileType = 'js';
+        fileType = 'js';
 
     this.copyTpl(
       'filter',
       fileType,
       destination(this.destDirectory, this.name, 'filter', fileType),
+      values
+    );
+
+    this.copyTpl(
+      'filter-spec',
+      fileType,
+      destination(this.destDirectory, this.name, 'filter.spec', fileType),
       values
     );
   }
