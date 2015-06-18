@@ -20,5 +20,5 @@
     vm.awesomeThings = ['Yeoman', 'Angular', 'Bower', 'Grunt'];
   }
 
-}());
+})();
 

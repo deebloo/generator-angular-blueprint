@@ -3,7 +3,7 @@
 /**
  * @ngdoc controller
  *
- * @name <%= appName %>.controller:HomeCtrl
+ * @name HomeCtrl
  *
  * @description
  * Controller for <%= appName %>
@@ -16,4 +16,4 @@
 
   function HomeCtrl() { }
 
-}());
+})();

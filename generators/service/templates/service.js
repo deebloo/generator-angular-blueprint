@@ -3,7 +3,7 @@
 /**
  * @ngdoc service
  *
- * @name <%= appName %>.service:<%= cameledName %>
+ * @name <%= cameledName %>
  *
  * @description
  * Service for <%= appName %>
@@ -18,5 +18,5 @@
 
   }
 
-}());
+})();
 

@@ -42,4 +42,4 @@ grunt
 
 cd ..
 
-#rm -rf $APPDIR
+rm -rf $APPDIR

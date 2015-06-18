@@ -3,7 +3,7 @@
 /**
  * @ngdoc controller
  *
- * @name <%= appName %>.controller:AboutCtrl
+ * @name AboutCtrl
  *
  * @description
  * Controller for <%= appName %>
@@ -24,4 +24,4 @@
     ];
   }
 
-}());
+})();

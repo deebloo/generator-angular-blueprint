@@ -44,6 +44,13 @@
   },
   "scripts": {
     "test": "node node_modules/grunt-cli/bin/grunt test",
-    "start": "node node_modules/grunt-cli/bin/grunt"
+    "start": "node node_modules/grunt-cli/bin/grunt",
+    "controller": "yo angular-blueprint:controller",
+    "factory": "yo angular-blueprint:factory",
+    "service": "yo angular-blueprint:service",
+    "route": "yo angular-blueprint:route",
+    "blueprint": "yo angular-blueprint:blueprint",
+    "filter": "yo angular-blueprint:directive",
+    "filter": "yo angular-blueprint:filter"
   }
 }

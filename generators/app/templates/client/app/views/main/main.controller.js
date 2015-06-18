@@ -3,7 +3,7 @@
 /**
  * @ngdoc controller
  *
- * @name <%= appName %>.controller:MainCtrl
+ * @name MainCtrl
  *
  * @description
  * Controller for <%= appName %>
@@ -22,4 +22,4 @@
     vm.isActive = isActive;
   }
 
-}());
+})();

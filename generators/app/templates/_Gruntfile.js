@@ -237,7 +237,8 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= appSettings.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        exclude: [ /jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js', 'bower_components/bootstrap/dist/css/bootstrap.css']
       },
       sass: {
         src: ['<%= appSettings.app %>/styles/*.scss', '<%= appSettings.app %>/app/views/**/*.scss'],
