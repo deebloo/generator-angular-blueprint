@@ -287,7 +287,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= appSettings.app %>/styles/app.scss': [
-            '<%= appSettings.app %>/{app/views, app/components}/**/*.{scss,sass}'
+            '<%= appSettings.app %>/{app/views,app/components}/**/*.{scss,sass}'
           ]
         }
       }
