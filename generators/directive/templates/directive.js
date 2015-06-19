@@ -3,7 +3,7 @@
 /**
  * @ngdoc directive
  *
- * @name <%= appName %>.directive:<%= cameledName %>
+ * @name <%= cameledName %>
  *
  * @description
  * directive for <%= appName %>

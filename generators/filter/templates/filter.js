@@ -3,7 +3,7 @@
 /**
  * @ngdoc filter
  *
- * @name <%= appName %>.filter:<%= cameledName %>
+ * @name <%= cameledName %>
  *
  * @description
  * Filter for <%= appName %>

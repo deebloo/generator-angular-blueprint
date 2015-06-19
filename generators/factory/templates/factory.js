@@ -3,7 +3,7 @@
 /**
  * @ngdoc factory
  *
- * @name <%= appName %>.factory:<%= cameledName %>
+ * @name <%= cameledName %>
  *
  * @description
  * Factory for <%= appName %>

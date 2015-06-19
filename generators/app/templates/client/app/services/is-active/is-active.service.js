@@ -3,7 +3,7 @@
 /**
  * @ngdoc factory
  *
- * @name <%= appName %>.factory:isActive
+ * @name isActive
  *
  * @description
  * Service for <%= appName %>
