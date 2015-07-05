@@ -24,6 +24,7 @@ describe('angular-blueprint:app', function () {
       '.jshintrc',
       'bower.json',
       'Gruntfile.js',
+      'karma.conf.js',
       'package.json',
       'README.md',
       './client/404.html',

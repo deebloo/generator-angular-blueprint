@@ -8,7 +8,7 @@
  * @description
  * Service for <%= appName %>
  */
-(function() {
+(function () {
 
   angular
     .module('<%= appName %>')

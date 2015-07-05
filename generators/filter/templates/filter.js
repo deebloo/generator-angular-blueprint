@@ -8,14 +8,14 @@
  * @description
  * Filter for <%= appName %>
  */
-(function() {
+(function () {
 
   angular
     .module('<%= appName %>')
     .filter('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {
-    return function() {
+    return function () {
 
     }
   }

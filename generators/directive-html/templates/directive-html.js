@@ -16,7 +16,9 @@
 
   function <%= cameledName %>() {
     return {
-        restrict: 'A',
+        restrict: 'E',
+        templateUrl: 'app/components/<%= dashedName %>/<%= dashedName %>.directive.html',
+        scope: {},
         link: link
     };
 

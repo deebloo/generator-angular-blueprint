@@ -8,14 +8,20 @@
  * @description
  * Factory for <%= appName %>
  */
-(function() {
+(function () {
 
   angular
     .module('<%= appName %>')
     .factory('<%= cameledName %>', <%= cameledName %>);
 
   function <%= cameledName %>() {
-    return { };
+    var privateVal = 'Hello World';
+
+    return {
+      exposeVal: function () {
+        return privateVal;
+      }
+    };
   }
 
 })();

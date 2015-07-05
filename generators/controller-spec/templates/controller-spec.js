@@ -4,12 +4,13 @@ describe('<%= type %>:<%= classedName %>Ctrl', function () {
 
   // load the controller's module
   beforeEach(module('<%= appName %>'));
+  beforeEach(module('templates'));
 
-  var <%= classedName %>Ctrl;
+  var <%= classedName %>;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($injector) {
-    <%= classedName %>Ctrl = $injector.get('$controller')('<%= classedName %>Ctrl');
+    <%= classedName %> = $injector.get('$controller')('<%= classedName %>');
   }));
 
   it('condition of test', function () {

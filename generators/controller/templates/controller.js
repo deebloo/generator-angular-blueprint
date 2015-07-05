@@ -8,16 +8,16 @@
  * @description
  * Controller for <%= appName %>
  */
-(function() {
+(function () {
 
   angular
     .module('<%= appName %>')
-    .controller('<%= classedName %>Ctrl', <%= classedName %>Ctrl);
+    .controller('<%= classedName %>', <%= classedName %>);
 
-  function <%= classedName %>Ctrl() {
+  function <%= classedName %>() {
     var vm = this;
 
-    vm.awesomeThings = ['Yeoman', 'Angular', 'Bower', 'Grunt'];
+    vm.foo = [];
   }
 
 })();

@@ -7,11 +7,11 @@
     .config(function ($stateProvider) {
       $stateProvider
         .state('main.<%= cameledName %>', {
-          url: '/<%= dashedName %>',
-          templateUrl: 'app/views/<%= dashedName %>/<%= dashedName %>.view.html',
-          controller: '<%= classedName %>Ctrl',
-          controllerAs: '<%= cameledName %>',
-          title: '<%= humanName %>'
+          url         : '/<%= dashedName %>',
+          templateUrl : 'app/views/<%= dashedName %>/<%= dashedName %>.view.html',
+          controller  : '<%= classedName %>',
+          controllerAs: '<%= classedName %>',
+          title       : '<%= humanName %>'
         });
     });
 

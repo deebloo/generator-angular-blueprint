@@ -1,12 +1,13 @@
 {
   "name": "<%= appName %>",
   "version": "0.0.0",
+  "license": "MIT",
   "devDependencies": {
     "angular-jsdoc": "~0.3.0",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-asset-injector": "^0.1.0",
-    "grunt-autoprefixer": "^2.2.0",
+    "grunt-autoprefixer": "^3.0.3",
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^1.0.0",
     "grunt-connect-proxy": "0.1.10",
@@ -16,7 +17,6 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-uglify": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
@@ -26,8 +26,7 @@
     "grunt-karma": "^0.10.1",
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.10.0",
-    "grunt-sass": "^0.18.1",
-    "grunt-svgmin": "^2.0.1",
+    "grunt-sass": "^1.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
     "jasmine-core": "^2.2.0",
@@ -35,6 +34,7 @@
     "karma": "^0.12.31",
     "karma-coverage": "^0.4.2",
     "karma-jasmine": "^0.3.5",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^3.1.0",
     "time-grunt": "^1.1.0"
@@ -43,14 +43,19 @@
     "node": ">=0.12.2"
   },
   "scripts": {
+    "start": "node node_modules/grunt-cli/bin/grunt serve",
     "test": "node node_modules/grunt-cli/bin/grunt test",
-    "start": "node node_modules/grunt-cli/bin/grunt",
+    "build": "node node_modules/grunt-cli/bin/grunt build",
+    "build-full": "node node_modules/grunt-cli/bin/grunt",
+    "docs": "node node_modules/grunt-cli/bin/grunt jsdoc",
+    "linter": "node node_modules/grunt-cli/bin/grunt jshint",
     "controller": "yo angular-blueprint:controller",
     "factory": "yo angular-blueprint:factory",
     "service": "yo angular-blueprint:service",
     "route": "yo angular-blueprint:route",
     "blueprint": "yo angular-blueprint:blueprint",
-    "filter": "yo angular-blueprint:directive",
-    "filter": "yo angular-blueprint:filter"
+    "filter": "yo angular-blueprint:filter",
+    "directive": "yo angular-blueprint:directive",
+    "directive-html": "yo angular-blueprint:directive-html"
   }
 }

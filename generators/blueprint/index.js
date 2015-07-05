@@ -32,6 +32,8 @@ module.exports = yeoman.generators.Base.extend({
           'factory-spec',
           'directive',
           'directive-spec',
+          'directive-html',
+          'directive-html-spec',
           'route',
           'view',
           'style'

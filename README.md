@@ -9,10 +9,7 @@ Prerequisites
 ```
 npm install -g bower
 npm install -g yo
-(optional) npm install -g grunt-cli
 ```
-All commands can be run with either grunt {command} or npm start {command}
-
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
 The goal is to have an out of the box scaffolding that will scale well for large complex applications.
 
@@ -54,8 +51,10 @@ yo angular-blueprint:blueprint
 7)  factory
 8)  factory-spec
 9)  directive
-10) directive-spec
-11) route
+10) directive-html
+11) directive-html-spec
+12) directive-spec
+13) route
 ```
 
 Produces:
@@ -133,6 +132,23 @@ yo angular-blueprint:directive nav
 Produces:
 ```
 client/app/components/nav/nav.directive.js
+client/app/components/nav/nav.directive.spec.js
+```
+
+### Directive-html
+
+Generates a new Angular Directive
+
+Example:
+```
+yo angular-blueprint:directive-html nav
+[?] Where should I generate "nav"? (./client/app/components/nav)
+```
+Produces:
+```
+client/app/components/nav/nav.directive.js
+client/app/components/nav/nav.directive.html
+client/app/components/nav/nav.directive.scss
 client/app/components/nav/nav.directive.spec.js
 ```
 

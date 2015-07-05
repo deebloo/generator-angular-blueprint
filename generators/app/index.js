@@ -77,6 +77,11 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('Gruntfile.js')
       );
 
+      this.fs.copy(
+        this.templatePath('_karma.conf.js'),
+        this.destinationPath('karma.conf.js')
+      );
+
       this.fs.copyTpl(
         this.templatePath('_package.json'),
         this.destinationPath('package.json'),

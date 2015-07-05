@@ -1,9 +1,4 @@
 'use strict';
-/**
- * @module Grunt
- * @description
- * Build script for the project
- */
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -14,7 +9,7 @@
 // Configurable application
 var appConfig = {
   app: require('./bower.json').appPath || 'client',
-  dist: 'dist',
+  dist: 'dist/client',
   proxy: false, // Whether or not the proxy should be turned on
   proxyConfig: [{
     context: '/api',
@@ -41,7 +36,6 @@ module.exports = function (grunt) {
     appSettings: appConfig,
 
     /**
-     * @description
      * Watches files for changes and runs tasks based on the changed files
      */
     watch: {
@@ -51,31 +45,20 @@ module.exports = function (grunt) {
       },
       js: {
         files: [
-          '<%= appSettings.app %>/app/*.js',
-          '<%= appSettings.app %>/app/components/**/{,*/}*.js',
-          '<%= appSettings.app %>/app/views/**/*.js',
-          '<%= appSettings.app %>/app/services/{,*/}*.js'
+          '<%= appSettings.app %>/**/**/**/*.js',
+          '!<%= appSettings.app %>/**/**/**/*.spec.js'
         ],
         tasks: ['newer:jshint:all', 'injector:scripts'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
-      jsTest: {
-        files: ['<%= appSettings.app %>/test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
       sass: {
         files: [
-          '<%= appSettings.app %>/styles/*.scss',
-          '<%= appSettings.app %>/app/views/**/*.scss',
-          '<%= appSettings.app %>/app/components/**/*.scss',
-          '<%= appSettings.app %>/sass-includes/*.scss'
+          '<%= appSettings.app %>/styles/**/*.scss',
+          '<%= appSettings.app %>/app/{views,components}/**/*.scss'
         ],
-        tasks: ['autoprefixer', 'injector:sass','sass']
-      },
-      gruntfile: {
-        files: ['Gruntfile.js']
+        tasks: ['injector:sass', 'sass', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -92,7 +75,7 @@ module.exports = function (grunt) {
     },
 
     /**
-     * @description The actual grunt server settings
+     * The actual grunt server settings
      */
     connect: {
       options: {
@@ -103,9 +86,6 @@ module.exports = function (grunt) {
       proxies: appConfig.proxy ? appConfig.proxyConfig : [],
       livereload: {
         options: {
-          open: {
-            target: 'http://localhost:9000'
-          },
           middleware: function (connect) {
             var middleware = [
               connect.static('.tmp'),
@@ -131,12 +111,6 @@ module.exports = function (grunt) {
             ];
           }
         }
-      },
-      dist: {
-        options: {
-          open: true,
-          base: '<%= appSettings.dist %>'
-        }
       }
     },
 
@@ -152,16 +126,16 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
+          'server/**/**/*.js',
           '<%= appSettings.app %>/{,*/}*.js',
-          '<%= appSettings.app %>/app/components**/{,*/}*.js',
-          '<%= appSettings.app %>/app/services/{,*/}*.js',
-          '<%= appSettings.app %>/app/views/**/{,*/}*.js',
+          '<%= appSettings.app %>/app/{services,views,components}/**/*.js',
+          '<%= appSettings.app %>/app/{services,views,components}/**/*.js',
           '!<%= appSettings.app %>/app/{services,views,components}/**/*.spec.js'
         ]
       },
       test: {
         options: {
-          jshintrc: '<%= appSettings.app %>/test/.jshintrc'
+          jshintrc: '.jshintrc'
         },
         src: ['<%= appSettings.app %>/test/spec/{,*/}*.js']
       }
@@ -175,14 +149,12 @@ module.exports = function (grunt) {
      * @see {@link https://github.com/allenhwkim/angular-jsdoc}
      */
     jsdoc : {
-      dist : {
+      client : {
         src: [
-          'Gruntfile.js',
           '<%= appSettings.app %>/{,*/}*.js',
           '<%= appSettings.app %>/app/components**/{,*/}*.js',
           '<%= appSettings.app %>/app/services/{,*/}*.js',
-          '<%= appSettings.app %>/app/views/**/{,*/}*.js',
-          '<%= appSettings.app %>/test/**/{,*/}*.js'
+          '<%= appSettings.app %>/app/views/**/{,*/}*.js'
         ],
         options: {
           destination: 'doc/client',
@@ -203,13 +175,11 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             'doc/client',
-            '<%= appSettings.dist %>/{,*/}*',
-            '!<%= appSettings.dist %>/.git{,*/}*'
+            '<%= appSettings.dist %>'
           ]
         }]
       },
-      server: '.tmp',
-      visual: 'client/test/visual/results'
+      server: '.tmp'
     },
 
     /**
@@ -218,15 +188,13 @@ module.exports = function (grunt) {
      */
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        map: true,
+        browsers: ['last 8 versions']
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp',
-          src: '{,*/}*.css',
-          dest: '.tmp'
-        }]
+        files: {
+          '.tmp/styles/app.css': '.tmp/styles/app.css'
+        }
       }
     },
 
@@ -238,7 +206,7 @@ module.exports = function (grunt) {
       app: {
         src: ['<%= appSettings.app %>/index.html'],
         ignorePath:  /\.\.\//,
-        exclude: [ /jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js', 'bower_components/bootstrap/dist/css/bootstrap.css']
+        exclude: [ /jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js']
       },
       sass: {
         src: ['<%= appSettings.app %>/styles/*.scss', '<%= appSettings.app %>/app/views/**/*.scss'],
@@ -247,9 +215,6 @@ module.exports = function (grunt) {
     },
 
     injector: {
-      options: {
-
-      },
       //Inject application script files into index.html (doesn't include bower)
       scripts: {
         options: {
@@ -301,24 +266,8 @@ module.exports = function (grunt) {
     sass: {
       options: {
         imagePath: '<%= appSettings.app %>/images',
-        outputStyle: (function() {
-          var outputStyle = grunt.option('output-style');
-          if(outputStyle !== undefined) {
-            return outputStyle;
-          }
-          else {
-            return 'nested';
-          }
-        }()),
-        sourceMap: (function() {
-          var sourcemap = grunt.option('sourcemap');
-          if(sourcemap !== undefined) {
-            return sourcemap;
-          }
-          else {
-            return true;
-          }
-        }())
+        outputStyle: 'expanded',
+        sourceMap: true
       },
       dist: {
         files: {
@@ -336,7 +285,7 @@ module.exports = function (grunt) {
         src: [
           '<%= appSettings.dist %>/scripts/{,*/}*.js',
           '<%= appSettings.dist %>/styles/{,*/}*.css',
-          //'<%= appSettings.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= appSettings.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= appSettings.dist %>/styles/fonts/*'
         ]
       }
@@ -373,54 +322,6 @@ module.exports = function (grunt) {
       css: ['<%= appSettings.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= appSettings.dist %>','<%= appSettings.dist %>/images']
-      }
-    },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= appSettings.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= appSettings.dist %>/scripts/scripts.js': [
-    //         '<%= appSettings.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= appSettings.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= appSettings.dist %>/images'
-        }]
-      }
-    },
-
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= appSettings.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= appSettings.dist %>/images'
-        }]
       }
     },
 
@@ -495,34 +396,40 @@ module.exports = function (grunt) {
      */
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= appSettings.app %>',
-          dest: '<%= appSettings.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*',
-            '.tmp/concat/scripts/templates.js'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= appSettings.dist %>/images',
-          src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= appSettings.dist %>'
-        }, {
-          expand: true,
-          src: 'server',
-          dest: '<%= appSettings.dist %>'
-        }]
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= appSettings.app %>',
+            dest: '<%= appSettings.dist %>',
+            src: [
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              'images/{,*/}*.{png,jpg,svg,webp}',
+              'fonts/{,*/}*.*',
+              '.tmp/concat/scripts/templates.js'
+            ]
+          },
+          {
+            expand: true,
+            cwd: '.tmp/images',
+            dest: '<%= appSettings.dist %>/images',
+            src: ['generated/*']
+          },
+          {
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist',
+            src: 'fonts/*',
+            dest: '<%= appSettings.dist %>'
+          },
+          // Copy the server folder (if it exists)
+          {
+            expand: true,
+            src: ['./server/**/**/*.js'],
+            dest: './dist/'
+          }
+        ]
       },
       styles: {
         expand: true,
@@ -544,9 +451,7 @@ module.exports = function (grunt) {
         'sass'
       ],
       dist: [
-        'sass',
-        'imagemin',
-        'svgmin'
+        'sass'
       ]
     },
 
@@ -556,13 +461,13 @@ module.exports = function (grunt) {
      */
     karma: {
       unit: {
-        configFile: '<%= appSettings.app %>/karma.conf.js',
+        configFile: 'karma.conf.js',
         singleRun: true
       }
     }
   });
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function () {
     var tasks = [
       'clean:server',
       'wiredep',
@@ -574,20 +479,11 @@ module.exports = function (grunt) {
       'watch'
     ];
 
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
-    }
-
     if(appConfig.proxy) {
       tasks.unshift('configureProxies:server');
     }
 
     grunt.task.run(tasks);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
@@ -604,9 +500,9 @@ module.exports = function (grunt) {
     'useminPrepare',
     'ngtemplates',
     'concurrent:dist',
-    'autoprefixer',
     'concat',
     'ngAnnotate',
+    'autoprefixer',
     'copy:dist',
     'cdnify',
     'cssmin',
