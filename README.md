@@ -122,7 +122,7 @@ client/app/services/user/user.factory.spec.js
 
 ### Directive
 
-Generates a new Angular Directive
+Generates a new Angular Directive.
 
 Example:
 ```
@@ -137,7 +137,7 @@ client/app/components/nav/nav.directive.spec.js
 
 ### Directive-html
 
-Generates a new Angular Directive
+Generates a new Angular Directive with an external template.
 
 Example:
 ```
@@ -212,6 +212,7 @@ npm start jsdoc
 Angular blueprint includes JSDOCs for automated documentation. Follow the JSDOCs style of comments and and you will have your basic documentation generated for you.
 
 ## To contribute
+
 ```
 git clone https://github.com/deebloo/generator-angular-blueprint.git
 ```
