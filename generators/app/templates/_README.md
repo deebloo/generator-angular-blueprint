@@ -16,7 +16,7 @@ npm start
 To run unit tests
 
 ```
-npm start
+npm test
 ```
 
 To build app for deployment
