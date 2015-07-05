@@ -7,10 +7,13 @@ Angular js Generator for large scale applications.
 
 Prerequisites
 
-```
-npm install -g bower
-npm install -g yo
-```
+Install [NodeJs](https://nodejs.org/)
+
+Install Bower ```npm install -g bower```
+
+Install Yeoman ```npm install -g yo```
+
+=====================================================
 
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
 The goal is to have an out of the box scaffolding that will scale well for large complex applications.

@@ -92,6 +92,12 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_README.md'),
         this.destinationPath('README.md')
       );
+
+      this.fs.copyTpl(
+        this.templatePath('_README.md'),
+        this.destinationPath('README.md'),
+        { appName: this._.camelize(this.config.get('appName')) }
+      );
     },
 
     projectfiles: function projectfiles() {
