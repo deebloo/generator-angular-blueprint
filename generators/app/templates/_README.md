@@ -28,26 +28,26 @@ All commands can either be run with grunt {command} or npm start {command}
 To start the development server
 
 ```
-grunt serve
-or
-npm start serve
+npm start
 ```
 
 To run unit tests
 
 ```
-grunt test
-or
-npm start test
+npm start
 ```
 
 To build app for deployment
 
 ```
-grunt build
-or
-npm start build
+npm run build
 ```
+
+To build app for deployment with tests and docs
+```
+npm run build
+```
+
 
 If you are using the [JSDoc](http://usejsdoc.org/) style of comments (which you should!!!) you can generate your documentation with the following command. Documentation can be found under `docs/client/` (Hooray  for automated documentation!)
 
