@@ -12,7 +12,6 @@ Install [NodeJs](https://nodejs.org/)
 Install Bower ```npm install -g bower```
 
 Install Yeoman ```npm install -g yo```
-
 =====================================================
 
 Based on [John Papa's AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
