@@ -229,7 +229,7 @@ client/app/views/about/user.view.html
 client/app/views/about/user.view.scss
 ```
 
-### Features
+## Features
 
 To start the development server
 
