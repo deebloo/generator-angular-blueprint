@@ -298,7 +298,7 @@ To run unit tests
 npm test
 ```
 
-To rum the full test suite (runs the unit tests as well as testing the generator end to end).
+To run the full test suite (runs the unit tests as well as testing the generator end to end).
 This is the same tests that are run on circle ci
 ```
 sh test.sh
