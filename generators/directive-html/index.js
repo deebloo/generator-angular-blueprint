@@ -13,9 +13,10 @@ module.exports = blueprints.NamedBase.extend({
   prompting: prompt,
 
   writing: function () {
-    var values = tplOptions(this.config.get('appName'), 'directive', this.name);
+    var values    = tplOptions(this.config.get('appName'), 'directive', this.name),
+        jsVersion = this.config.get('jsVersion') || 'ES5';
 
-    this.copyTpl('directive-html', 'js', destination(this.destDirectory, this.name, 'directive', 'js'), values);
+    this.copyTpl('directive-html-' + jsVersion, 'js', destination(this.destDirectory, this.name, 'directive', 'js'), values);
 
     this.copyTpl('directive-html-spec', 'js', destination(this.destDirectory, this.name, 'directive.spec', 'js'), values);
 

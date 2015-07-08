@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator'),
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
-    this.argument('blueprintName', { type: String, required: false });
+    this.argument('blueprintName', {type: String, required: false});
 
     this.destPath = './blueprints';
   },
@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function prompting() {
     var done = this.async();
 
-    if(this.blueprintName) {
+    if (this.blueprintName) {
       this.blueprint = this.blueprintName;
 
       done();
@@ -47,36 +47,34 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function writing() {
-    if(!fs.existsSync('./blueprints/templates/blueprint.json')) {
+    var type   = this.config.get('jsVersion') || 'ES5',
+        bpName = this.blueprint + '-' + type,
+        fileExt;
+
+    switch (this.blueprint) {
+      case 'view':
+        fileExt = '.html';
+        bpName = 'view';
+        break;
+      case 'style':
+        fileExt = '.scss';
+        bpName = 'style';
+        break;
+      default:
+        fileExt = '.js';
+    }
+
+    if (!fs.existsSync('./blueprints/templates/blueprint.json')) {
       this.fs.copy(
         this.templatePath('blueprint.json'),
         this.destinationPath('./blueprints/templates/blueprint.json')
       );
     }
 
-    var templateDir = __dirname + '/../' + this.blueprint + '/' + 'templates/'; // Mark the end of the string so it cn be easily replace below
-
-    this.sourceRoot(templateDir); // manually set source root to the select generator type
-
-    var fileExt = (function() {
-      var ext;
-
-      switch(this.blueprint) {
-        case 'view':
-          ext = '.html';
-          break;
-        case 'style':
-          ext = '.scss';
-          break;
-        default:
-          ext = '.js';
-      }
-
-      return ext;
-    }.bind(this)());
+    this.sourceRoot(__dirname + '/../' + bpName + '/' + 'templates/');
 
     this.fs.copy(
-      this.templatePath(this.blueprint + fileExt),
+      this.templatePath(bpName + fileExt),
       this.destinationPath('./blueprints/templates/' + this.blueprint + '/template' + fileExt)
     );
   }
