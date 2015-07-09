@@ -1,8 +1,22 @@
 'use strict';
 
+/**
+ * @ngdoc controller
+ *
+ * @name AboutCtrl
+ *
+ * @description
+ * Controller for <%= appName %>
+ */
 class AboutCtrl {
   constructor() {
-    this.awesomeThings = ['foo', 'bar', 'baz'];
+    var vm = this;
+
+    vm.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
   }
 }
 

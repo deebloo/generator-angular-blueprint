@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * @ngdoc controller
+ *
+ * @name AppCtrl
+ *
+ * @description
+ * Controller for <%= appName %>
+ */
+
 function AppCtrl($rootScope) {
   var vm = this;
 
@@ -8,7 +17,7 @@ function AppCtrl($rootScope) {
   $rootScope.$on('$stateChangeSuccess', stateChangeSuccess); // Listen for state change
 
   /**
-   * @name stateChangeSuccess
+   * Change the title on state change
    *
    * @memberof AppCtrl
    *

@@ -1,8 +1,16 @@
 'use strict';
 
+/**
+ * @ngdoc controller
+ *
+ * @name HomeCtrl
+ *
+ * @description
+ * Controller for <%= appName %>
+ */
 class HomeCtrl {
   constructor() {
-    this.user = { username: 'USER'};
+
   }
 }
 

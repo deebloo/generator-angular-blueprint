@@ -1,13 +1,21 @@
 'use strict';
 
+/**
+ * @ngdoc controller
+ *
+ * @name MainCtrl
+ *
+ * @description
+ * Controller for <%= appName %>
+ */
 class MainCtrl {
-  constructor(isActive) {
+  constructor() {
     var vm = this;
 
-    vm.isActive = isActive;
+    vm.user = { username: 'USER'};
   }
 }
 
-MainCtrl.$inject = ['isActive'];
+MainCtrl.$inject = [];
 
 export default MainCtrl;

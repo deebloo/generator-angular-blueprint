@@ -1,9 +1,6 @@
 'use strict';
-/**
- * @module Grunt
- * @description
- * Build script for the project
- */
+
+var _ = require('lodash');
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -54,8 +51,6 @@ var scssFiles = [
   '<%= appSettings.app %>/styles/**/*.scss',
   '<%= appSettings.app %>/app/{views,components}/**/*.scss'
 ];
-
-var _ = require('lodash');
 
 module.exports = function (grunt) {
   // Load grunt tasks automatically
@@ -163,20 +158,6 @@ module.exports = function (grunt) {
           jshintrc: '.jshintrc'
         },
         src: ['<%= appSettings.app %>/test/spec/{,*/}*.js']
-      }
-    },
-
-    jsdoc : {
-      client : {
-        src: [
-          '<%= appSettings.app %>/{,*/}*.js',
-          '<%= appSettings.app %>/app/{views,components,services}/{,*/}*.js'
-        ],
-        options: {
-          destination: 'doc/client',
-          configure: 'node_modules/angular-jsdoc/conf.json',
-          template: 'doc/template'
-        }
       }
     },
 
@@ -472,7 +453,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: require('./bower.json').name || 'myApp',
+        module: require('./bower.json').name,
         usemin: 'scripts/scripts.js',
         htmlmin: {
           collapseBooleanAttributes: true,
@@ -634,8 +615,7 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin',
-    'jsdoc'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
