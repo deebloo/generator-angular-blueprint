@@ -26,7 +26,6 @@
     "grunt-google-cdn": "*",
     "grunt-karma": "^0.10.1",
     "grunt-newer": "^1.1.0",
-    "grunt-ng-annotate": "^0.10.0",
     "grunt-sass": "^1.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",

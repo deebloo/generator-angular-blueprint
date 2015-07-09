@@ -433,17 +433,6 @@ module.exports = function (grunt) {
       }
     },
 
-    ngAnnotate: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
-        }]
-      }
-    },
-
     cdnify: {
       dist: {
         html: ['<%= appSettings.dist %>/*.html']
@@ -570,7 +559,6 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'injector',
-      'injector',
       'concurrent:server',
       'autoprefixer',
       'browserify',
@@ -592,6 +580,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'wiredep',
+    'injector',
     'browserify',
     'concurrent:test',
     'autoprefixer',
@@ -602,13 +592,13 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'injector',
     'useminPrepare',
     'browserify',
     'ngtemplates',
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',
