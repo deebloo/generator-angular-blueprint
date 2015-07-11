@@ -5,14 +5,13 @@ import services from './services/';
 import components from './components/';
 import views from './views/';
 
-var moduleName = 'MyApp';
+var moduleName = '<%= appName %>';
 
 var app = angular.module(moduleName, [
   services,
   components,
   views,
   'ngAnimate',
-  'ngAria',
   'ngCookies',
   'ui.router',
   'ngSanitize',

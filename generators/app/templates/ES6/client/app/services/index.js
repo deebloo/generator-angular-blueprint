@@ -3,7 +3,7 @@
 // START-import-services
 // END-import-services
 
-var moduleName = 'MyApp.services',
+var moduleName = '<%= appName %>.services',
     services   = angular.module(moduleName, []);
 
 // START-attach-services

@@ -3,7 +3,7 @@
 // START-import-controllers
 // END-import-controllers
 
-var moduleName  = 'MyApp.controllers',
+var moduleName  = '<%= appName %>.controllers',
     controllers = angular.module(moduleName, []);
 
 // START-attach-controllers

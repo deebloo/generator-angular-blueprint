@@ -3,7 +3,7 @@
 // START-import-components
 // END-import-components
 
-var moduleName = 'MyApp.components',
+var moduleName = '<%= appName %>.components',
     components = angular.module(moduleName, []);
 
     components = components || {};

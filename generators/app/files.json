@@ -28,7 +28,7 @@
     "as": ".jshintrc"
   },
   "_bower.json": {
-    "type": "copy",
+    "type": "copyTpl",
     "as": "bower.json"
   },
   "_Gruntfile.js": {
