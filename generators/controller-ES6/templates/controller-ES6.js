@@ -12,7 +12,7 @@ class <%= classedName %> {
   constructor() {
     this.foo = [];
   }
-};
+}
 
 <%= classedName %>.$inject = [];
 

@@ -10,47 +10,44 @@ var _ = require('lodash');
 
 // Configurable application
 var appConfig = {
-  app: require('./bower.json').appPath || 'client',
-  dist: 'dist',
-  proxy: false, // Whether or not the proxy should be turned on
+  app        : require('./bower.json').appPath || 'client',
+  dist       : 'dist',
+  proxy      : false, // Whether or not the proxy should be turned on
   proxyConfig: [{
-    context: '/api',
-    host: 'api.github.com',
-    port: 443,
-    https: true,
+    context     : '/api',
+    host        : 'api.github.com',
+    port        : 443,
+    https       : true,
     changeOrigin: true,
-    rewrite: {
+    rewrite     : {
       '^/api': ''
     }
   }]
 };
 
-var servicesFiles = [
-  '{.tmp,<%= appSettings.app %>}/app/services/{,*/}*.service.js'
-];
-
-var routeFiles = [
-  '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.route.js'
-];
-
-var componentFiles = [
-  '{.tmp,<%= appSettings.app %>}/app/components/{,*/}*.directive.js'
-];
-
-var controllerFiles = [
-  '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.controller.js'
-];
-
-var jsFiles = [
-  '<%= appSettings.app %>/app/*.js',
-  '<%= appSettings.app %>/app/{services,components,views}/{,*/}*.js',
-  '!<%= appSettings.app %>/**/**/**/*.spec.js'
-];
-
-var scssFiles = [
-  '<%= appSettings.app %>/styles/**/*.scss',
-  '<%= appSettings.app %>/app/{views,components}/**/*.scss'
-];
+var dirs = {
+  servicesFiles: [
+    '{.tmp,<%= appSettings.app %>}/app/services/{,*/}*.service.js'
+  ],
+  routeFiles: [
+    '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.route.js'
+  ],
+  componentFiles: [
+    '{.tmp,<%= appSettings.app %>}/app/components/{,*/}*.directive.js'
+  ],
+  controllerFiles: [
+    '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.controller.js'
+  ],
+  jsFiles: [
+    '<%= appSettings.app %>/app/*.js',
+    '<%= appSettings.app %>/app/{services,components,views}/{,*/}*.js',
+    '!<%= appSettings.app %>/**/**/**/*.spec.js'
+  ],
+  scssFiles: [
+    '<%= appSettings.app %>/styles/**/*.scss',
+    '<%= appSettings.app %>/app/{views,components}/**/*.scss'
+  ]
+};
 
 module.exports = function (grunt) {
   // Load grunt tasks automatically
@@ -65,22 +62,18 @@ module.exports = function (grunt) {
     appSettings: appConfig,
 
     watch: {
-      bower: {
+      bower     : {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
       browserify: {
-        files: jsFiles,
-        tasks: ['browserify']
-      },
-      js: {
-        files: jsFiles,
-        tasks: ['newer:jshint:all', 'injector'],
+        files  : jsFiles,
+        tasks  : ['browserify', 'newer:jshint:all', 'injector'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
-      sass: {
+      sass      : {
         files: scssFiles,
         tasks: ['injector:sass', 'sass', 'autoprefixer']
       },
@@ -88,7 +81,7 @@ module.exports = function (grunt) {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
-        files: [
+        files  : [
           '<%= appSettings.app %>/*.html',
           '<%= appSettings.app %>/**/**/*.html',
           '.tmp/styles/{,*/}*.css',
@@ -102,12 +95,12 @@ module.exports = function (grunt) {
      * @description The actual grunt server settings
      */
     connect: {
-      options: {
-        port: 9000,
-        hostname: '*',
+      options   : {
+        port      : 9000,
+        hostname  : '*',
         livereload: 35729
       },
-      proxies: appConfig.proxy ? appConfig.proxyConfig : [],
+      proxies   : appConfig.proxy ? appConfig.proxyConfig : [],
       livereload: {
         options: {
           middleware: function (connect) {
@@ -117,7 +110,7 @@ module.exports = function (grunt) {
               connect.static(appConfig.app)
             ];
 
-            if(appConfig.proxy) {
+            if (appConfig.proxy) {
               middleware.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
             }
 
@@ -125,9 +118,9 @@ module.exports = function (grunt) {
           }
         }
       },
-      test: {
+      test      : {
         options: {
-          port: 9001,
+          port      : 9001,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -143,7 +136,7 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
       },
-      all: {
+      all    : {
         src: [
           'Gruntfile.js',
           'server/**/**/*.js',
@@ -153,16 +146,16 @@ module.exports = function (grunt) {
           '!<%= appSettings.app %>/app/{services,views,components}/**/*.spec.js'
         ]
       },
-      test: {
+      test   : {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['<%= appSettings.app %>/test/spec/{,*/}*.js']
+        src    : ['<%= appSettings.app %>/test/spec/{,*/}*.js']
       }
     },
 
     clean: {
-      dist: {
+      dist  : {
         files: [{
           dot: true,
           src: [
@@ -177,10 +170,10 @@ module.exports = function (grunt) {
 
     autoprefixer: {
       options: {
-        map: true,
+        map     : true,
         browsers: ['last 1 versions']
       },
-      dist: {
+      dist   : {
         files: {
           '.tmp/styles/app.css': '.tmp/styles/app.css'
         }
@@ -188,156 +181,156 @@ module.exports = function (grunt) {
     },
 
     wiredep: {
-      app: {
-        src: ['<%= appSettings.app %>/index.html'],
-        ignorePath:  /\.\.\//,
-        exclude: [ /jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js']
+      app : {
+        src       : ['<%= appSettings.app %>/index.html'],
+        ignorePath: /\.\.\//,
+        exclude   : [/jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js']
       },
       sass: {
-        src: ['<%= appSettings.app %>/styles/*.scss', '<%= appSettings.app %>/app/views/**/*.scss'],
+        src       : ['<%= appSettings.app %>/styles/*.scss', '<%= appSettings.app %>/app/views/**/*.scss'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
     injector: {
       //Inject application script files into index.html (doesn't include bower)
-      importServices: {
+      importServices   : {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1],
+            var splitPath   = filePath.split('.')[0].split('/'),
+                file        = splitPath[splitPath.length - 1],
                 serviceName = _.camelCase(file);
 
             return 'import ' + serviceName + ' from ' + '\'./' + file + '/' + file + '.service\';';
           },
-          starttag: '// START-import-services',
-          endtag: '// END-import-services'
+          starttag : '// START-import-services',
+          endtag   : '// END-import-services'
         },
-        files: {
-          '<%= appSettings.app %>/app/services/index.js': [servicesFiles]
+        files  : {
+          '<%= appSettings.app %>/app/services/index.js': [dirs.servicesFiles]
         }
       },
-      attachServices: {
+      attachServices   : {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1],
+            var splitPath   = filePath.split('.')[0].split('/'),
+                file        = splitPath[splitPath.length - 1],
                 serviceName = _.camelCase(file);
 
             return 'services.factory(\'' + serviceName + '\', ' + serviceName + ');';
           },
-          starttag: '// START-attach-services',
-          endtag: '// END-attach-services'
+          starttag : '// START-attach-services',
+          endtag   : '// END-attach-services'
         },
-        files: {
-          '<%= appSettings.app %>/app/services/index.js': [servicesFiles]
+        files  : {
+          '<%= appSettings.app %>/app/services/index.js': [dirs.servicesFiles]
         }
       },
-      importRoutes: {
+      importRoutes     : {
         options: {
           transform: function (filePath) {
             var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1];
+                file      = splitPath[splitPath.length - 1];
 
             return 'import ' + file + 'Route from ' + '\'./views/' + file + '/' + file + '.route\';';
           },
-          starttag: '// START-import-routes',
-          endtag: '// END-import-routes'
+          starttag : '// START-import-routes',
+          endtag   : '// END-import-routes'
         },
-        files: {
-          '<%= appSettings.app %>/app/config.js': [routeFiles]
+        files  : {
+          '<%= appSettings.app %>/app/config.js': [dirs.routeFiles]
         }
       },
-      attachRoutes: {
+      attachRoutes     : {
         options: {
           transform: function (filePath) {
             var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1];
+                file      = splitPath[splitPath.length - 1];
 
             return file + 'Route($stateProvider);';
           },
-          starttag: '// START-attach-routes',
-          endtag: '// END-attach-routes'
+          starttag : '// START-attach-routes',
+          endtag   : '// END-attach-routes'
         },
-        files: {
-          '<%= appSettings.app %>/app/config.js': [routeFiles]
+        files  : {
+          '<%= appSettings.app %>/app/config.js': [dirs.routeFiles]
         }
       },
-      importComponents: {
+      importComponents : {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-              file = splitPath[splitPath.length - 1],
-              serviceName = _.camelCase(file);
+            var splitPath   = filePath.split('.')[0].split('/'),
+                file        = splitPath[splitPath.length - 1],
+                serviceName = _.camelCase(file);
 
             return 'import ' + serviceName + ' from ' + '\'./' + file + '/' + file + '.directive\';';
           },
-          starttag: '// START-import-components',
-          endtag: '// END-import-components'
+          starttag : '// START-import-components',
+          endtag   : '// END-import-components'
         },
-        files: {
-          '<%= appSettings.app %>/app/components/index.js': [componentFiles]
+        files  : {
+          '<%= appSettings.app %>/app/components/index.js': [dirs.componentFiles]
         }
       },
-      attachComponents: {
+      attachComponents : {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1],
+            var splitPath   = filePath.split('.')[0].split('/'),
+                file        = splitPath[splitPath.length - 1],
                 serviceName = _.camelCase(file);
 
             return 'components.directive(\'' + serviceName + '\', ' + serviceName + ');';
           },
-          starttag: '// START-attach-components',
-          endtag: '// END-attach-components'
+          starttag : '// START-attach-components',
+          endtag   : '// END-attach-components'
         },
-        files: {
-          '<%= appSettings.app %>/app/components/index.js': [componentFiles]
+        files  : {
+          '<%= appSettings.app %>/app/components/index.js': [dirs.componentFiles]
         }
       },
       importControllers: {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1],
+            var splitPath      = filePath.split('.')[0].split('/'),
+                file           = splitPath[splitPath.length - 1],
                 controllerName = _.capitalize(_.camelCase(file)) + 'Ctrl';
 
             return 'import ' + controllerName + ' from ' + '\'./' + file + '/' + file + '.controller\';';
           },
-          starttag: '// START-import-controllers',
-          endtag: '// END-import-controllers'
+          starttag : '// START-import-controllers',
+          endtag   : '// END-import-controllers'
         },
-        files: {
-          '<%= appSettings.app %>/app/views/index.js': [controllerFiles]
+        files  : {
+          '<%= appSettings.app %>/app/views/index.js': [dirs.controllerFiles]
         }
       },
       attachControllers: {
         options: {
           transform: function (filePath) {
-            var splitPath = filePath.split('.')[0].split('/'),
-                file = splitPath[splitPath.length - 1],
+            var splitPath      = filePath.split('.')[0].split('/'),
+                file           = splitPath[splitPath.length - 1],
                 controllerName = _.capitalize(_.camelCase(file)) + 'Ctrl';
 
             return 'controllers.controller(\'' + controllerName + '\', ' + controllerName + ');';
           },
-          starttag: '// START-attach-controllers',
-          endtag: '// END-attach-controllers'
+          starttag : '// START-attach-controllers',
+          endtag   : '// END-attach-controllers'
         },
-        files: {
-          '<%= appSettings.app %>/app/views/index.js': [controllerFiles]
+        files  : {
+          '<%= appSettings.app %>/app/views/index.js': [dirs.controllerFiles]
         }
       },
-      scripts: {
+      scripts          : {
         options: {
-          transform: function(filePath) {
+          transform: function (filePath) {
             filePath = filePath.replace('/client/', '');
 
             return '<script src="' + filePath + '"></script>';
           },
-          starttag: '<!-- injector:js -->',
-          endtag: '<!-- endinjector -->'
+          starttag : '<!-- injector:js -->',
+          endtag   : '<!-- endinjector -->'
         },
-        files: {
+        files  : {
           '<%= appSettings.app %>/index.html': [
             [
               '{.tmp,<%= appSettings.app %>}/app/templates.js',
@@ -349,19 +342,19 @@ module.exports = function (grunt) {
           ]
         }
       },
-      sass: {
+      sass             : {
         options: {
-          transform: function(filePath) {
+          transform: function (filePath) {
             filePath = filePath.replace('/client', '..');
 
             return '@import \'' + filePath + '\';';
           },
-          starttag: '// injector',
-          endtag: '// endinjector'
+          starttag : '// injector',
+          endtag   : '// endinjector'
         },
-        files: {
+        files  : {
           '<%= appSettings.app %>/styles/app.scss': [
-            '<%= appSettings.app %>/{app/views, app/components}/**/*.{scss,sass}'
+            '<%= appSettings.app %>/app/{views,components}/**/*.{scss,sass}'
           ]
         }
       }
@@ -369,13 +362,13 @@ module.exports = function (grunt) {
 
     sass: {
       options: {
-        imagePath: '<%= appSettings.app %>/images',
+        imagePath  : '<%= appSettings.app %>/images',
         outputStyle: 'expanded',
-        sourceMap: true
+        sourceMap  : true
       },
-      dist: {
+      dist   : {
         files: {
-          '.tmp/styles/app.css' : '<%= appSettings.app %>/styles/app.scss'
+          '.tmp/styles/app.css': '<%= appSettings.app %>/styles/app.scss'
         }
       }
     },
@@ -392,43 +385,43 @@ module.exports = function (grunt) {
     },
 
     useminPrepare: {
-      html: '<%= appSettings.app %>/index.html',
+      html   : '<%= appSettings.app %>/index.html',
       options: {
         dest: '<%= appSettings.dist %>',
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              js : ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
-            post: {}
+            post : {}
           }
         }
       }
     },
 
     usemin: {
-      html: ['<%= appSettings.dist %>/{,*/}*.html'],
-      css: ['<%= appSettings.dist %>/styles/{,*/}*.css'],
+      html   : ['<%= appSettings.dist %>/{,*/}*.html'],
+      css    : ['<%= appSettings.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= appSettings.dist %>','<%= appSettings.dist %>/images']
+        assetsDirs: ['<%= appSettings.dist %>', '<%= appSettings.dist %>/images']
       }
     },
 
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
-          conservativeCollapse: true,
+          collapseWhitespace       : true,
+          conservativeCollapse     : true,
           collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeCommentsFromCDATA  : true,
+          removeOptionalTags       : true
         },
-        files: [{
+        files  : [{
           expand: true,
-          cwd: '<%= appSettings.dist %>',
-          src: ['*.html', '{,*/}*.html', 'views/{,*/}*.html', 'components/{,*/}*.html'],
-          dest: '<%= appSettings.dist %>'
+          cwd   : '<%= appSettings.dist %>',
+          src   : ['*.html', '{,*/}*.html', 'views/{,*/}*.html', 'components/{,*/}*.html'],
+          dest  : '<%= appSettings.dist %>'
         }]
       }
     },
@@ -442,34 +435,34 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: require('./bower.json').name,
-        usemin: 'scripts/scripts.js',
+        module : require('./bower.json').name,
+        usemin : 'scripts/scripts.js',
         htmlmin: {
-          collapseBooleanAttributes: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          removeEmptyAttributes: true,
-          removeRedundantAttributes: true,
-          removeScriptTypeAttributes: true,
+          collapseBooleanAttributes    : true,
+          collapseWhitespace           : true,
+          removeAttributeQuotes        : true,
+          removeEmptyAttributes        : true,
+          removeRedundantAttributes    : true,
+          removeScriptTypeAttributes   : true,
           removeStyleLinkTypeAttributes: true
         }
       },
-      main: {
-        cwd: 'client',
-        src: ['{app,components}/**/*.html'],
+      main   : {
+        cwd : 'client',
+        src : ['{app,components}/**/*.html'],
         dest: '.tmp/templates.js'
       }
     },
 
     copy: {
-      dist: {
+      dist  : {
         files: [
           {
             expand: true,
-            dot: true,
-            cwd: '<%= appSettings.app %>',
-            dest: '<%= appSettings.dist %>',
-            src: [
+            dot   : true,
+            cwd   : '<%= appSettings.app %>',
+            dest  : '<%= appSettings.dist %>',
+            src   : [
               '*.{ico,png,txt}',
               '.htaccess',
               '*.html',
@@ -480,23 +473,23 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: '.tmp/images',
-            dest: '<%= appSettings.dist %>/images',
-            src: ['generated/*']
+            cwd   : '.tmp/images',
+            dest  : '<%= appSettings.dist %>/images',
+            src   : ['generated/*']
           },
           {
             expand: true,
-            cwd: 'bower_components/bootstrap/dist',
-            src: 'fonts/*',
-            dest: '<%= appSettings.dist %>'
+            cwd   : 'bower_components/bootstrap/dist',
+            src   : 'fonts/*',
+            dest  : '<%= appSettings.dist %>'
           }
         ]
       },
       styles: {
         expand: true,
-        cwd: '<%= appSettings.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
+        cwd   : '<%= appSettings.app %>/styles',
+        dest  : '.tmp/styles/',
+        src   : '{,*/}*.css'
       }
     },
 
@@ -504,10 +497,10 @@ module.exports = function (grunt) {
       server: [
         'sass'
       ],
-      test: [
+      test  : [
         'sass'
       ],
-      dist: [
+      dist  : [
         'sass'
       ]
     },
@@ -515,20 +508,20 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
-        singleRun: true
+        singleRun : true
       }
     },
 
     browserify: {
       dist: {
-        files: {
+        files  : {
           '.tmp/module.js': ['client/bootstrap.js']
         },
         options: {
           browserifyOptions: {
             debug: true
           },
-          transform: ['babelify']
+          transform        : ['babelify']
         }
       }
     }
@@ -547,7 +540,7 @@ module.exports = function (grunt) {
       'watch'
     ];
 
-    if(appConfig.proxy) {
+    if (appConfig.proxy) {
       tasks.unshift('configureProxies:server');
     }
 
@@ -571,7 +564,7 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
-    if(appConfig.proxy) {
+    if (appConfig.proxy) {
       tasks.unshift('configureProxies:server');
     }
 

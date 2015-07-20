@@ -23,7 +23,6 @@ var common = [
   './client/app/components/',
   './client/app/services/',
   './client/app/views/about/',
-  './client/app/views/application/',
   './client/app/views/home/',
   './client/app/views/main/',
   './client/images/',
@@ -41,7 +40,7 @@ describe('angular-blueprint:app - es5', function () {
   });
 
   it('creates files', function () {
-    assert.file(['./client/app.js'].concat(common));
+    assert.file(['./client/app.js', './client/app/views/application/'].concat(common));
   });
 });
 
