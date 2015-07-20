@@ -10,13 +10,17 @@ describe('AngularBlueprint:view', function () {
       .withArguments(['test'])
       .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true })
+      .on('ready', function (gen) {
+        gen.config.set('appDir', './src/');
+        gen.config.set('jsVersion', 'ES5')
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      './client/app/views/test/test.view.html',
-      './client/app/views/test/test.style.scss'
+      './src/app/views/test/test.view.html',
+      './src/app/views/test/test.style.scss'
     ]);
   });
 });

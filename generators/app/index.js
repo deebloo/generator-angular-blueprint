@@ -3,11 +3,13 @@
 var yeoman = require('yeoman-generator'),
     chalk  = require('chalk'),
     yosay  = require('yosay'),
-    files  = require('./files.json');
+    files;
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
     this.argument('appName', {type: String, required: false});
+
+    files = require('./files')(this.config.getAll());
   },
 
   prompting: function () {
@@ -16,18 +18,15 @@ module.exports = yeoman.generators.Base.extend({
     this.config.save();
 
     this.config.defaults({
-      jsVersion: 'ES5'
+      jsVersion: 'ES5',
+      'appDir': 'client'
     });
 
-    var prompts = [{
-      type   : 'list',
-      name   : 'jsVersion',
-      message: 'Which version of Javascript would you like to use?',
-      choices: ['ES5', 'ES6']
-    }];
+    var prompts = [];
 
     this.log(yosay('Welcome to the ' + chalk.red('AngularBlueprint') + ' generator!'));
 
+    // see if appName passed in as argument
     if (this.appName) {
       this.config.set('appName', this.appName);
     }
@@ -39,6 +38,22 @@ module.exports = yeoman.generators.Base.extend({
         default: this._.camelize(this.appname)
       });
     }
+
+    prompts.push({
+      type   : 'input',
+      name   : 'appDir',
+      message: 'What do you want to name the app root directory',
+      store: true,
+      default: this.config.get('appDir')
+    });
+
+    prompts.push({
+      type   : 'list',
+      name   : 'jsVersion',
+      message: 'Which version of Javascript would you like to use?',
+      store: true,
+      choices: ['ES5', 'ES6']
+    });
 
     this.prompt(prompts, function (props) {
       for (var prop in props) {

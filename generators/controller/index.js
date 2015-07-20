@@ -7,15 +7,15 @@ var blueprints  = require('yeoman-blueprints'),
 
 module.exports = blueprints.NamedBase.extend({
   init: function () {
-    this.destPath = './client/app/views/';
+    this.destPath = '/app/views/';
   },
 
   prompting: prompt,
 
   writing: function () {
-    var values   = tplOptions(this.config.get('appName'), 'controller', this.name),
-        fileType = 'js',
-        jsVersion = this.config.get('jsVersion') || 'ES5';
+    var values    = tplOptions(this.config.get('appName'), 'controller', this.name),
+        fileType  = 'js',
+        jsVersion = this.config.get('jsVersion');
 
     this.copyTpl(
       'controller-' + jsVersion,

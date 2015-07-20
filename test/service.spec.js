@@ -10,13 +10,17 @@ describe('AngularBlueprint:service', function () {
       .withArguments(['test'])
       .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true })
+      .on('ready', function (gen) {
+        gen.config.set('appDir', './src/');
+        gen.config.set('jsVersion', 'ES5')
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      './client/app/services/test/test.service.js',
-      './client/app/services/test/test.service.spec.js'
+      './src/app/services/test/test.service.js',
+      './src/app/services/test/test.service.spec.js'
     ]);
   });
 });

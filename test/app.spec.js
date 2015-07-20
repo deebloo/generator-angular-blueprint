@@ -40,7 +40,7 @@ describe('angular-blueprint:app - es5', function () {
   });
 
   it('creates files', function () {
-    assert.file(['./client/app.js', './client/app/views/application/'].concat(common));
+    assert.file(['./client/app.js','./client/app/views/application/'].concat(common));
   });
 });
 

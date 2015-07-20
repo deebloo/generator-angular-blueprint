@@ -10,16 +10,20 @@ describe('AngularBlueprint:route', function () {
       .withArguments(['helloWorld'])
       .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true})
+      .on('ready', function (gen) {
+        gen.config.set('appDir', './src/');
+        gen.config.set('jsVersion', 'ES5')
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      './client/app/views/hello-world/hello-world.view.html',
-      './client/app/views/hello-world/hello-world.style.scss',
-      './client/app/views/hello-world/hello-world.controller.js',
-      './client/app/views/hello-world/hello-world.route.js',
-      './client/app/views/hello-world/hello-world.controller.spec.js'
+      './src/app/views/hello-world/hello-world.view.html',
+      './src/app/views/hello-world/hello-world.style.scss',
+      './src/app/views/hello-world/hello-world.controller.js',
+      './src/app/views/hello-world/hello-world.route.js',
+      './src/app/views/hello-world/hello-world.controller.spec.js'
     ]);
   });
 });

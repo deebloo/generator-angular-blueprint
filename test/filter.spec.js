@@ -10,13 +10,17 @@ describe('AngularBlueprint:filter', function () {
       .withArguments(['test'])
       .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true})
+      .on('ready', function (gen) {
+        gen.config.set('appDir', './src/');
+        gen.config.set('jsVersion', 'ES5')
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      './client/app/filters/test/test.filter.js',
-      './client/app/filters/test/test.filter.spec.js'
+      './src/app/filters/test/test.filter.js',
+      './src/app/filters/test/test.filter.spec.js'
     ]);
   });
 });
