@@ -26,24 +26,24 @@ var appConfig = {
 };
 
 var dirs = {
-  servicesFiles: [
+  servicesFiles  : [
     '{.tmp,<%= appSettings.app %>}/app/services/{,*/}*.service.js'
   ],
-  routeFiles: [
+  routeFiles     : [
     '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.route.js'
   ],
-  componentFiles: [
+  componentFiles : [
     '{.tmp,<%= appSettings.app %>}/app/components/{,*/}*.directive.js'
   ],
   controllerFiles: [
     '{.tmp,<%= appSettings.app %>}/app/views/{,*/}*.controller.js'
   ],
-  jsFiles: [
+  jsFiles        : [
     '<%= appSettings.app %>/app/*.js',
     '<%= appSettings.app %>/app/{services,components,views}/{,*/}*.js',
     '!<%= appSettings.app %>/**/**/**/*.spec.js'
   ],
-  scssFiles: [
+  scssFiles      : [
     '<%= appSettings.app %>/styles/**/*.scss',
     '<%= appSettings.app %>/app/{views,components}/**/*.scss'
   ]
@@ -141,7 +141,6 @@ module.exports = function (grunt) {
           'Gruntfile.js',
           'server/**/**/*.js',
           '<%= appSettings.app %>/{,*/}*.js',
-          '<%= appSettings.app %>/app/{services,views,components}/**/*.js',
           '<%= appSettings.app %>/app/{services,views,components}/**/*.js',
           '!<%= appSettings.app %>/app/{services,views,components}/**/*.spec.js'
         ]
@@ -247,7 +246,7 @@ module.exports = function (grunt) {
             var splitPath = filePath.split('.')[0].split('/'),
                 file      = splitPath[splitPath.length - 1];
 
-            return file + 'Route($stateProvider);';
+            return file + 'Route(...arguments);';
           },
           starttag : '// START-attach-routes',
           endtag   : '// END-attach-routes'
