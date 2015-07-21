@@ -12,7 +12,8 @@ describe('AngularBlueprint:controller - custom - ES5', function () {
       .withPrompt({ 'directory': './foo/bar/' })
       .withOptions({ 'skip-install': true})
       .on('ready', function (gen) {
-        gen.config.set('jsVersion', 'ES5')
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES5');
       })
       .on('end', done);
   });
@@ -35,7 +36,8 @@ describe('AngularBlueprint:controller - custom - ES6', function () {
       .withPrompt({ 'directory': './foo/bar/' })
       .withOptions({ 'skip-install': true})
       .on('ready', function (gen) {
-        gen.config.set('jsVersion', 'ES6')
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES6');
       })
       .on('end', done);
   });

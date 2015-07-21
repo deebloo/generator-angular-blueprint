@@ -8,8 +8,6 @@ var yeoman = require('yeoman-generator'),
 module.exports = yeoman.generators.Base.extend({
   init: function () {
     this.argument('appName', {type: String, required: false});
-
-    files = require('./files')(this.config.getAll());
   },
 
   prompting: function () {
@@ -19,7 +17,7 @@ module.exports = yeoman.generators.Base.extend({
 
     this.config.defaults({
       jsVersion: 'ES5',
-      'appDir': 'client'
+      'appDir' : 'client'
     });
 
     var prompts = [];
@@ -43,7 +41,6 @@ module.exports = yeoman.generators.Base.extend({
       type   : 'input',
       name   : 'appDir',
       message: 'What do you want to name the app root directory',
-      store: true,
       default: this.config.get('appDir')
     });
 
@@ -51,7 +48,6 @@ module.exports = yeoman.generators.Base.extend({
       type   : 'list',
       name   : 'jsVersion',
       message: 'Which version of Javascript would you like to use?',
-      store: true,
       choices: ['ES5', 'ES6']
     });
 
@@ -61,6 +57,8 @@ module.exports = yeoman.generators.Base.extend({
           this.config.set(prop, props[prop]);
         }
       }
+
+      files = require('./files')(this.config.getAll());
 
       done();
     }.bind(this));
@@ -74,6 +72,7 @@ module.exports = yeoman.generators.Base.extend({
 
       var tplValues = {
         appName     : this._.camelize(appName),
+        appDir      : this.config.get('appDir'),
         humanAppName: this._.humanize(appName)
       };
 

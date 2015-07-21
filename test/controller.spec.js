@@ -9,10 +9,10 @@ describe('AngularBlueprint:controller - ES5', function () {
     helpers
       .run(path.join(__dirname, '../generators/controller'))
       .withArguments(['test'])
-      .withOptions({ 'skip-install': true, 'appDir': '/src/'})
+      .withOptions({ 'skip-install': true})
       .on('ready', function (gen) {
-        gen.config.set('appDir', './src/');
-        gen.config.set('jsVersion', 'ES5')
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES5');
       })
       .on('end', done);
   });
@@ -30,10 +30,10 @@ describe('AngularBlueprint:controller - ES6', function () {
     helpers
       .run(path.join(__dirname, '../generators/controller'))
       .withArguments(['test'])
-      .withOptions({ 'skip-install': true, 'appDir': '/src/'})
+      .withOptions({ 'skip-install': true})
       .on('ready', function (gen) {
-        gen.config.set('appDir', './src/');
-        gen.config.set('jsVersion', 'ES6')
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES6');
       })
       .on('end', done);
   });

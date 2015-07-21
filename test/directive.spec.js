@@ -11,7 +11,7 @@ describe('AngularBlueprint:directive', function () {
       .withPrompt({ 'directory': false })
       .withOptions({ 'skip-install': true})
       .on('ready', function (gen) {
-        gen.config.set('appDir', './src/');
+        gen.config.set('appDir', 'src');
         gen.config.set('jsVersion', 'ES5')
       })
       .on('end', done);

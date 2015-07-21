@@ -16,31 +16,36 @@ var common = [
   'karma.conf.js',
   'package.json',
   'README.md',
-  './client/404.html',
-  './client/favicon.ico',
-  './client/index.html',
-  './client/robots.txt',
-  './client/app/components/',
-  './client/app/services/',
-  './client/app/views/about/',
-  './client/app/views/home/',
-  './client/app/views/main/',
-  './client/images/',
-  './client/styles/',
+  './src/404.html',
+  './src/favicon.ico',
+  './src/index.html',
+  './src/robots.txt',
+  './src/app/components/',
+  './src/app/services/',
+  './src/app/views/about/',
+  './src/app/views/home/',
+  './src/app/views/main/',
+  './src/images/',
+  './src/styles/',
   './doc'
 ];
+
 
 describe('angular-blueprint:app - es5', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
-      .withPrompt({ appName: 'HelloWorld', jsVersion: 'es5' })
+      .withPrompt({ appName: 'HelloWorld', jsVersion: 'ES5', appDir: 'src' })
+      .on('ready', function (gen) {
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES5');
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
-    assert.file(['./client/app.js','./client/app/views/application/'].concat(common));
+    assert.file(['./src/app.js','./src/app/views/application/'].concat(common));
   });
 });
 
@@ -49,11 +54,15 @@ describe('angular-blueprint:app - es6', function () {
     helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
-      .withPrompt({ appName: 'HelloWorld', jsVersion: 'es6' })
+      .withPrompt({ appName: 'HelloWorld', jsVersion: 'ES6', appDir: 'src' })
+      .on('ready', function (gen) {
+        gen.config.set('appDir', 'src');
+        gen.config.set('jsVersion', 'ES6');
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
-    assert.file(['./client/bootstrap.js'].concat(common));
+    assert.file(['./src/bootstrap.js'].concat(common));
   });
 });

@@ -7,7 +7,7 @@ var blueprints  = require('yeoman-blueprints'),
 
 module.exports = blueprints.NamedBase.extend({
   init: function () {
-    this.destPath = './app/services/';
+    this.destPath = 'app/services/';
   },
 
   prompting: prompt,

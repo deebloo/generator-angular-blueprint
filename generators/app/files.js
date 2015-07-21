@@ -4,7 +4,7 @@ module.exports = function (opts) {
   return {
     'client': {
       'type': 'copyTpl',
-      'as': opts.appDir || 'client'
+      'as': (opts.appDir + '/')
     },
     'doc': {
       'type': 'copy',
