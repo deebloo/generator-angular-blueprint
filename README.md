@@ -8,7 +8,7 @@ Angular js Generator for large scale applications.
 
 Install [NodeJs](https://nodejs.org/)
 ```
-npm install -g bower yo
+npm i -g bower yo
 ```
 If you get permission errors run ```sudo !!```
 
