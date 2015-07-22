@@ -1,6 +1,6 @@
 'use strict';
 
-function aboutRoute($stateProvider) {
+function aboutRoute($urlRouterProvider, $stateProvider) {
   $stateProvider.state('main.about', {
     url         : '/about',
     templateUrl : 'about.view.html',

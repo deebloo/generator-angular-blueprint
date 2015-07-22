@@ -1,6 +1,6 @@
 'use strict';
 
-function mainRoute($stateProvider) {
+function mainRoute($urlRouterProvider, $stateProvider) {
   $stateProvider.state('main', {
     templateUrl : 'main.view.html',
     controller  : 'Main',

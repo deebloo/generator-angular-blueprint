@@ -1,6 +1,6 @@
 'use strict';
 
-function homeRoute($stateProvider) {
+function homeRoute($urlRouterProvider, $stateProvider) {
   $stateProvider.state('main.home', {
     url         : '/',
     templateUrl : 'home.view.html',

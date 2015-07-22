@@ -67,14 +67,14 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       browserify: {
-        files  : jsFiles,
+        files  : dirs.jsFiles,
         tasks  : ['browserify', 'newer:jshint:all', 'injector'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       sass      : {
-        files: scssFiles,
+        files: dirs.scssFiles,
         tasks: ['injector:sass', 'sass', 'autoprefixer']
       },
       livereload: {
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
      */
     connect: {
       options   : {
-        port      : 9000,
+        port      : process.env.PORT || 9000,
         hostname  : '*',
         livereload: 35729
       },
@@ -292,7 +292,7 @@ module.exports = function (grunt) {
           transform: function (filePath) {
             var splitPath      = filePath.split('.')[0].split('/'),
                 file           = splitPath[splitPath.length - 1],
-                controllerName = _.capitalize(_.camelCase(file)) + 'Ctrl';
+                controllerName = _.capitalize(_.camelCase(file));
 
             return 'import ' + controllerName + ' from ' + '\'./' + file + '/' + file + '.controller\';';
           },
@@ -308,7 +308,7 @@ module.exports = function (grunt) {
           transform: function (filePath) {
             var splitPath      = filePath.split('.')[0].split('/'),
                 file           = splitPath[splitPath.length - 1],
-                controllerName = _.capitalize(_.camelCase(file)) + 'Ctrl';
+                controllerName = _.capitalize(_.camelCase(file));
 
             return 'controllers.controller(\'' + controllerName + '\', ' + controllerName + ');';
           },
@@ -344,10 +344,10 @@ module.exports = function (grunt) {
       sass             : {
         options: {
           transform: function (filePath) {
-            filePath = filePath.replace('/client', '..');
+            filePath = filePath.replace('/' + appConfig.app, '..');
 
             return '@import \'' + filePath + '\';';
-          },
+          }.bind(this),
           starttag : '// injector',
           endtag   : '// endinjector'
         },
@@ -447,7 +447,7 @@ module.exports = function (grunt) {
         }
       },
       main   : {
-        cwd : 'client',
+        cwd : '<%= appSettings.app %>',
         src : ['{app,components}/**/*.html'],
         dest: '.tmp/templates.js'
       }
@@ -512,13 +512,24 @@ module.exports = function (grunt) {
     },
 
     browserify: {
-      dist: {
+      dev: {
         files  : {
-          '.tmp/module.js': ['client/bootstrap.js']
+          '.tmp/module.js': ['<%= appSettings.app %>/bootstrap.js']
         },
         options: {
           browserifyOptions: {
             debug: true
+          },
+          transform        : ['babelify']
+        }
+      },
+      dist: {
+        files  : {
+          '.tmp/module.js': ['<%= appSettings.app %>/bootstrap.js']
+        },
+        options: {
+          browserifyOptions: {
+            debug: false
           },
           transform        : ['babelify']
         }
@@ -533,35 +544,11 @@ module.exports = function (grunt) {
       'injector',
       'concurrent:server',
       'autoprefixer',
-      'browserify',
-      'ngtemplates',
+      'browserify:dev',
+      //'ngtemplates',
       'connect:livereload',
       'watch'
     ];
-
-    if (appConfig.proxy) {
-      tasks.unshift('configureProxies:server');
-    }
-
-    grunt.task.run(tasks);
-  });
-
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
-    var tasks = [
-      'clean:server',
-      'wiredep',
-      'injector',
-      'concurrent:server',
-      'autoprefixer',
-      'browserify',
-      'ngtemplates',
-      'connect:livereload',
-      'watch'
-    ];
-
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
-    }
 
     if (appConfig.proxy) {
       tasks.unshift('configureProxies:server');
@@ -586,7 +573,7 @@ module.exports = function (grunt) {
     'wiredep',
     'injector',
     'useminPrepare',
-    'browserify',
+    'browserify:dist',
     'ngtemplates',
     'concurrent:dist',
     'autoprefixer',
