@@ -545,7 +545,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'browserify:dev',
-      //'ngtemplates',
+      'ngtemplates',
       'connect:livereload',
       'watch'
     ];

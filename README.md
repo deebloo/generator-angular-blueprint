@@ -249,7 +249,7 @@ npm run build
 To build app for deployment with tests and docs
 
 ```
-npm run build
+npm run build-full
 ```
 
 If you are using the [JSDoc](http://usejsdoc.org/) style of comments (which you should!!!) you can generate your documentation with the following command. Documentation can be found under `docs/client/` (Hooray  for automated documentation!)
@@ -262,7 +262,7 @@ API Proxying
 
 Angular-blueprint includes [grunt-connect-proxy](https://github.com/drewzboto/grunt-connect-proxy) to hit outside APIs for development. 
 
-The proxy is set up for the github API right now but can can be configured easily to hit your own api. (Yes I know github's api does not require this).
+The proxy is set up for the github API right now but can can be configured easily to hit your own api. (Yes I know Github's api does not require this).
 
 Angular Blueprint has a switch for proxying APIs. To turn it on set ```appConfig.proxy = true```
 

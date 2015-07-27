@@ -2,7 +2,7 @@
 
 function mainRoute($urlRouterProvider, $stateProvider) {
   $stateProvider.state('main', {
-    templateUrl : 'main.view.html',
+    templateUrl : 'app/views/main/main.view.html',
     controller  : 'Main',
     controllerAs: 'Main'
   });
