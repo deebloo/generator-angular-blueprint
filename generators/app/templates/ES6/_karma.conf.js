@@ -5,6 +5,8 @@
 // Generated on 2014-12-18 using
 // generator-karma 0.8.3
 
+var src = require('./bower.json').appPath || 'client';
+
 module.exports = function (config) {
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
@@ -23,8 +25,7 @@ module.exports = function (config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       '.tmp/module.js',
-      'client/app/{components,views,services}/**/*.spec.js',
-      'client/app/views/**/*.spec.js'
+      src + '/app/{components,views,services}/**/*.spec.js'
     ],
 
     // list of files / patterns to exclude
