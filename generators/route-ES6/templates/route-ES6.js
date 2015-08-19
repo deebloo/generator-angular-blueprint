@@ -1,11 +1,11 @@
 'use strict';
 
-function aboutRoute($urlRouterProvider, $stateProvider) {
-  $stateProvider.state('main.<%= cameledName %>', {
-      url         : '/<%= dashedName %>',
-      templateUrl : 'app/views/<%= dashedName %>/<%= dashedName %>.view.html',
-      controller  : '<%= classedName %>',
-      controllerAs: '<%= classedName %>'
+function aboutRoute($stateProvider) {
+  $stateProvider.state('<%= cameledName %>', {
+    url         : '/<%= dashedName %>',
+    templateUrl : 'views/<%= dashedName %>/<%= dashedName %>.view.html',
+    controller  : '<%= classedName %>',
+    controllerAs: '<%= classedName %>'
   });
 }
 
