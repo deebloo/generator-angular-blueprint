@@ -3,8 +3,8 @@
 describe('<%= type %>:<%= classedName %>Ctrl', function () {
 
   // load the controller's module
-  beforeEach(module('<%= appName %>'));
-  beforeEach(module('templates'));
+  beforeEach(angular.mock.module('<%= appName %>'));
+  beforeEach(angular.mock.module('templates'));
 
   var <%= classedName %>;
 

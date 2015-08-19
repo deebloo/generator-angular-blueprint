@@ -3,7 +3,7 @@
 describe('<%= type %>:<%= cameledName %>', function () {
 
   // load the factory's module
-  beforeEach(module('<%= appName %>'));
+  beforeEach(angular.mock.module('<%= appName %>'));
 
   var <%= cameledName %>;
 
