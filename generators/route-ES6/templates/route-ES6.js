@@ -4,8 +4,7 @@ function aboutRoute($stateProvider) {
   $stateProvider.state('<%= cameledName %>', {
     url         : '/<%= dashedName %>',
     templateUrl : 'views/<%= dashedName %>/<%= dashedName %>.view.html',
-    controller  : '<%= classedName %>',
-    controllerAs: '<%= classedName %>'
+    controller  : '<%= classedName %> as <%= classedName %>'
   });
 }
 
