@@ -6,11 +6,9 @@ var blueprints  = require('yeoman-blueprints'),
     tplOptions  = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
-  init: function init() {
-    this.destPath = 'app/services/';
+  prompting: function () {
+      prompt.call(this, 'app/services/')
   },
-
-  prompting: prompt,
 
   writing: function () {
     var values    = tplOptions(this.config.get('appName'), 'service', this.name),
