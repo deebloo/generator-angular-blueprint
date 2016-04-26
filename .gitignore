@@ -1,3 +1,4 @@
 node_modules/
 .idea
-.test-app
+.DS_Store
+.testApp
