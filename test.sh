@@ -8,7 +8,6 @@ generators () {
     echo | yo angular-blueprint:factory baz$1
     echo | yo angular-blueprint:filter fooFoo$1
     echo | yo angular-blueprint:route fooBar$1
-    echo | yo angular-blueprint:service fooBaz$1
 }
 
 echo "Run unit tests"
@@ -19,8 +18,10 @@ mkdir $APPDIR && cd $APPDIR
 
 echo | yo angular-blueprint myApp
 
+echo "Run the generators"
 generators 1
 
+echo "Creating Blueprints!"
 yo angular-blueprint:blueprint controller
 yo angular-blueprint:blueprint controller-spec
 
@@ -33,13 +34,10 @@ yo angular-blueprint:blueprint factory-spec
 yo angular-blueprint:blueprint filter
 yo angular-blueprint:blueprint filter-spec
 
-yo angular-blueprint:blueprint service
-yo angular-blueprint:blueprint service-spec
-
+echo "Run the generators - AGAIN"
 generators 2
 
-grunt
+echo "Create a build"
+npm run build-full
 
 cd ..
-
-rm -rf $APPDIR

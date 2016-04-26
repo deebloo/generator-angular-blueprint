@@ -9,9 +9,9 @@
  * Filter for <%= appName %>
  */
 function <%= cameledName %>() {
-  return function () {
+    return function () {
 
-  }
+    }
 }
 
 <%= cameledName %>.$inject = [];

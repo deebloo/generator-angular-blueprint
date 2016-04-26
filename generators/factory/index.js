@@ -1,9 +1,9 @@
 'use strict';
 
-var blueprints  = require('yeoman-blueprints'),
-    prompt      = require('../../lib/prompt-install-path'),
-    destination = require('../../lib/destination'),
-    tplOptions  = require('../../lib/tpl-options');
+const blueprints = require('yeoman-blueprints');
+const prompt = require('../../lib/prompt-install-path');
+const destination = require('../../lib/destination');
+const tplOptions = require('../../lib/tpl-options');
 
 module.exports = blueprints.NamedBase.extend({
   prompting: function () {
@@ -11,11 +11,21 @@ module.exports = blueprints.NamedBase.extend({
   },
 
   writing: function () {
-    var values    = tplOptions(this.config.get('appName'), 'factory', this.name),
-        jsVersion = this.config.get('jsVersion') || 'ES5';
+    const values = tplOptions(this.config.get('appName'), 'factory', this.name);
+    const jsVersion = this.config.get('jsVersion') || 'ES5';
 
-    this.copyTpl('factory-' + jsVersion, 'js', destination(this.destDirectory, this.name, 'factory', 'js'), values);
+    this.copyTpl(
+        `factory-${jsVersion}`, 
+        'js', 
+        destination(this.destDirectory, this.name, 'factory', 'js'), 
+        values
+    );
 
-    this.copyTpl('factory-spec', 'js', destination(this.destDirectory, this.name, 'factory.spec', 'js'), values);
+    this.copyTpl(
+        `factory-spec-${jsVersion}`,  
+        'js', 
+        destination(this.destDirectory, this.name, 'factory.spec', 'js'), 
+        values
+    );
   }
 });

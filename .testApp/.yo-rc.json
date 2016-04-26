@@ -1,0 +1,7 @@
+{
+  "generator-angular-blueprint": {
+    "jsVersion": "ES5",
+    "appDir": "src",
+    "appName": "myApp"
+  }
+}

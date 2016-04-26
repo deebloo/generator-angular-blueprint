@@ -1,5 +1,7 @@
 'use strict';
 
+import template from 'components/<%= dashedName %>/<%= dashedName %>.directive.html';
+
 /**
  * @ngdoc directive
  *
@@ -9,20 +11,25 @@
  * directive for <%= appName %>
  */
 function <%= cameledName %>() {
-  return {
-    restrict: 'E',
-    templateUrl: 'components/<%= dashedName %>/<%= dashedName %>.directive.html',
-    scope: {},
-    link: link
-  };
+  	class Controller {
+		    constructor() {
+		    }
+	  }
 
-  function link() {
-  }
+	  return {
+		    restrict: 'E',
+		    template: template,
+		    scope: {},
+		    controller: Controller,
+		    controllerAs: 'vm',
+		    bindToController: true,
+	  };
 }
 
 <%= cameledName %>.$inject = [];
 
 export default <%= cameledName %>;
+
 
 
 

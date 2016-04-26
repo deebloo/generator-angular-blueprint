@@ -6,8 +6,9 @@ var helpers = require('yeoman-generator').test;
 
 describe('AngularBlueprint:blueprint - js', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/blueprint'))
-      .withPrompt({ 'blueprints': 'controller' })
+    helpers
+      .run(path.join(__dirname, '../generators/blueprint'))
+      .withArguments(['controller'])
       .withOptions({ 'skip-install': true })
       .on('end', done);
   });

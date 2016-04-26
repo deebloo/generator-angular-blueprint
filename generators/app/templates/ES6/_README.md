@@ -1,38 +1,37 @@
-<%= appName %>
-=================
+# Angular Weather Redux [![Circle CI](https://circleci.com/gh/deebloo/angular-weather-redux.svg?style=svg)](https://circleci.com/gh/deebloo/angular-weather-redux)
 
-Prerequisites
+## Installation
 
-Install [NodeJs](https://nodejs.org/)
+[Demo](http://deebloo.github.io/angular-weather-redux/#/) 
 
-Install Bower ```npm install -g bower```
+[Docs](http://deebloo.github.io/angular-weather-redux/docs) 
 
-To start the development server
+Install NodeJs
 
+Clone Repository
+
+```
+npm install
+```
+
+## Commands
+
+#### run dev server
 ```
 npm start
 ```
 
-To run unit tests
-
+#### run unit tests
 ```
 npm test
 ```
 
-To build app for deployment
-
-```
-npm run build
-```
-
-To build app for deployment with tests and docs
-
-```
-npm run build
-```
-
-If you are using the [JSDoc](http://usejsdoc.org/) style of comments (which you should!!!) you can generate your documentation with the following command. Documentation can be found under `docs/client/` (Hooray  for automated documentation!)
-
+#### build documentation
 ```
 npm run docs
+```
+
+#### build release version 
+```
+npm run build
 ```
