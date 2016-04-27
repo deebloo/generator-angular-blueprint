@@ -8,7 +8,7 @@
 
 // Configurable application
 var appConfig = {
-  app: require('./bower.json').appPath || 'client',
+  app: require('./bower.json').appPath || 'src',
   dist: 'dist/client',
   proxy: false, // Whether or not the proxy should be turned on
   proxyConfig: [{
@@ -219,7 +219,7 @@ module.exports = function (grunt) {
       scripts: {
         options: {
           transform: function(filePath) {
-            filePath = filePath.replace('/client/', '');
+            filePath = filePath.replace('/src/', '');
 
             return '<script src="' + filePath + '"></script>';
           },
@@ -243,8 +243,8 @@ module.exports = function (grunt) {
       sass: {
         options: {
           transform: function(filePath) {
-            filePath = filePath.replace('/client', '..');
-
+            filePath = filePath.replace('/src', '..');
+            
             return '@import \'' + filePath + '\';';
           },
           starttag: '// injector',
@@ -384,7 +384,7 @@ module.exports = function (grunt) {
         }
       },
       main: {
-        cwd: 'client',
+        cwd: 'src',
         src: ['{app,components}/**/*.html'],
         dest: '.tmp/templates.js'
       }

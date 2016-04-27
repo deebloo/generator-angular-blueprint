@@ -9,7 +9,6 @@
 angular
   .module('<%= appName %>', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
     'ui.router',
     'ngSanitize',

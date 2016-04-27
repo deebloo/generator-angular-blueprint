@@ -5,7 +5,7 @@
 // Generated on 2014-12-18 using
 // generator-karma 0.8.3
 
-var src = require('./bower.json').appPath || 'client';
+var src = require('./bower.json').appPath || 'src';
 
 module.exports = function (config) {
   config.set({
@@ -25,10 +25,10 @@ module.exports = function (config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
-      src + '/client/*.html',
-      src + '/client/*.js',
-      src + '/client/app/{views,components}/**/*.{js,html}',
-      src + '/client/app/services/**/*.js'
+      src + '/*.html',
+      src + '/*.js',
+      src + '/app/{views,components}/**/*.{js,html}',
+      src + '/app/services/**/*.js'
     ],
 
     // list of files / patterns to exclude
@@ -48,14 +48,14 @@ module.exports = function (config) {
     ],
 
     ngHtml2JsPreprocessor: {
-      stripPrefix: 'client/',
+      stripPrefix: 'src/',
       moduleName: 'templates'
     },
 
     preprocessors: {
-      'client/*.html': 'ng-html2js',
-      'client/app/{components,views}/**/*.html': 'ng-html2js',
-      'client/app/{components,services,views}/**/!(*spec).js': ['coverage']
+      'src/*.html': 'ng-html2js',
+      'src/app/{components,views}/**/*.html': 'ng-html2js',
+      'src/app/{components,services,views}/**/!(*spec).js': ['coverage']
     },
 
     reporters: ['coverage', 'progress'],
