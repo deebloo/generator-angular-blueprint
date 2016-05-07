@@ -14,7 +14,7 @@ describe('AngularBlueprint:blueprint - view', function () {
 
   it('creates files', function () {
     assert.file([
-      'blueprints/templates/view/template.html',
+      'blueprints/templates/view-ES5/template.html',
       'blueprints/templates/blueprint.json'
     ]);
   });

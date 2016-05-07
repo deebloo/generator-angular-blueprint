@@ -14,7 +14,7 @@ describe('AngularBlueprint:blueprint - style', function () {
 
   it('creates files', function () {
     assert.file([
-      'blueprints/templates/style/template.scss',
+      'blueprints/templates/style-ES5/template.scss',
       'blueprints/templates/blueprint.json'
     ]);
   });

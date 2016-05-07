@@ -81,7 +81,7 @@ module.exports = yeoman.generators.Base.extend({
 
         this.fs.copy(
             this.templatePath(bpName + fileExt),
-            this.destinationPath(`./blueprints/templates/${this.blueprint}/template${fileExt}`)
+            this.destinationPath(`./blueprints/templates/${this.blueprint}-${type}/template${fileExt}`)
         );
     }
 });

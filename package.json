@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "full-test": "bash ./test.sh ES5 && bash ./test.sh ES6"
+    "test-full": "bash ./test.sh ES5 && bash ./test.sh ES6"
   },
   "main": "app/index.js",
   "files": [

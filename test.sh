@@ -10,12 +10,9 @@ generators () {
     echo | yo angular-blueprint:filter fooFoo$1
     echo | yo angular-blueprint:route fooBar$1
 }
-
-echo "Run unit tests"
-npm test
-
 echo "Create the temporary app directory"
-mkdir $APPDIR && cd $APPDIR
+mkdir $APPDIR
+cd $APPDIR
 
 echo | yo angular-blueprint myApp $JSVERSION
 

@@ -15,7 +15,7 @@ describe('AngularBlueprint:blueprint - js', function () {
 
   it('creates files', function () {
     assert.file([
-      'blueprints/templates/controller/template.js',
+      'blueprints/templates/controller-ES5/template.js',
       'blueprints/templates/blueprint.json'
     ]);
   });

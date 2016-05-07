@@ -36,15 +36,13 @@
     "test": "karma start",
     "start": "gulp",
     "build": "gulp build",
-    "build-full": "npm test && npm run build",
+    "build-full": "gulp injector && npm run build && NODE_ENV=ci npm test",
     "docs": "gulp clean:docs && node node_modules/jsdoc/jsdoc.js src/ -d docs -r README.md -c node_modules/angular-jsdoc/common/conf.json -t docs/template"
   },
   "dependencies": {
     "angular": "^1.5.2",
     "angular-animate": "^1.5.2",
     "angular-sanitize": "^1.5.2",
-    "angular-ui-router": "^0.2.18",
-    "moment": "^2.12.0",
-    "redux": "^3.3.1"
+    "angular-ui-router": "^0.2.18"
   }
 }
