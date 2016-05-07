@@ -5,7 +5,7 @@ import components from 'components';
 import views from 'views';
 
 export default angular
-	.module('MyApp', [
+	.module('<%= appName %>', [
         'ngAnimate',
         'ngSanitize',
         services,

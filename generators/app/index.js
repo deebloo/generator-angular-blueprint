@@ -11,6 +11,7 @@ module.exports = yeoman.generators.Base.extend({
         yeoman.generators.Base.apply(this, arguments);
     
         this.argument('appName', { type: String, required: false });
+        this.argument('jsVersion', { type: String, required: false });
     },
     
     prompting: function () {
@@ -38,13 +39,17 @@ module.exports = yeoman.generators.Base.extend({
                 default: this._.camelize(this.appname)
             });
         }
-
-        prompts.push({
-            type: 'list',
-            name: 'jsVersion',
-            message: 'Which version of Javascript would you like to use?',
-            choices: ['ES5', 'ES6']
-        });
+        
+        if(this.jsVersion) {
+            this.config.set('jsVersion', this.jsVersion);
+        } else {
+            prompts.push({
+                type: 'list',
+                name: 'jsVersion',
+                message: 'Which version of Javascript would you like to use?',
+                choices: ['ES5', 'ES6']
+            });  
+        }
 
         this.prompt(prompts, function (props) {
             for (var prop in props) {

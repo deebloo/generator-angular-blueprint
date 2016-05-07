@@ -1,7 +1,7 @@
 {
-  "name": "WeatherApp",
+  "name": "<%= appName %>",
   "version": "0.0.0",
-  "description": "A small weather application",
+  "description": "",
   "repository": "",
   "license": "MIT",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "test": "karma start",
     "start": "gulp",
     "build": "gulp build",
+    "build-full": "npm test && npm run build",
     "docs": "gulp clean:docs && node node_modules/jsdoc/jsdoc.js src/ -d docs -r README.md -c node_modules/angular-jsdoc/common/conf.json -t docs/template"
   },
   "dependencies": {

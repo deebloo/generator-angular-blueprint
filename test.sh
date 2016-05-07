@@ -1,6 +1,7 @@
 #!/bin/bash
 
-APPDIR=".testApp"
+JSVERSION=$1;
+APPDIR=".testApp"$JSVERSION
 
 generators () {
     echo | yo angular-blueprint:controller foo$1
@@ -16,7 +17,7 @@ npm test
 echo "Create the temporary app directory"
 mkdir $APPDIR && cd $APPDIR
 
-echo | yo angular-blueprint myApp
+echo | yo angular-blueprint myApp $JSVERSION
 
 echo "Run the generators"
 generators 1
@@ -41,3 +42,5 @@ echo "Create a build"
 npm run build-full
 
 cd ..
+
+rm -rf APPDIR

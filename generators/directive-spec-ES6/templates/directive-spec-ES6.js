@@ -1,23 +1,21 @@
 'use strict';
 
 describe('<%= type %>:<%= dashedName %>', function () {
+    // load the directive's module and view
+    beforeEach(angular.mock.module('<%= appName %>'));
 
-  // load the directive's module and view
-  beforeEach(angular.mock.module('<%= appName %>'));
-  beforeEach(angular.mock.module('templates'));
+    let element, scope;
 
-  var element, scope;
+    // Initialize a mock scope
+    beforeEach(inject(function ($injector) {
+        scope = $injector.get('$rootScope').$new();
+    }));
 
-  // Initialize a mock scope
-  beforeEach(inject(function ($injector) {
-    scope = $injector.get('$rootScope').$new();
-  }));
+    // compile the element to be tested
+    it('should be a thing', inject(function ($compile) {
+        element = angular.element('<div <%= dashedName %>></div>');
+        element = $compile(element)(scope);
 
-  // compile the element to be tested
-  it('should be a thing', inject(function ($compile) {
-    element = angular.element('<<%= dashedName %>></<%= dashedName %>>');
-    element = $compile(element)(scope);
-
-    scope.$apply();
-  }));
+        scope.$apply();
+    }));
 });

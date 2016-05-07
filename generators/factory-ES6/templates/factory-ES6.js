@@ -9,13 +9,13 @@
  * Factory for <%= appName %>
  */
 function <%= cameledName %>() {
-  var privateVal = 'Hello World';
+    var privateVal = 'Hello World';
 
-  return {
-    exposeVal: function () {
-      return privateVal;
-    }
-  };
+    return {
+        exposeVal: function () {
+            return privateVal;
+        }
+    };
 }
 
 <%= cameledName %>.$inject = [];

@@ -2,7 +2,7 @@
 
 describe('directive:my-app', function () {
 	// load the directive's module and view
-	beforeEach(angular.mock.module('MyApp'));
+	beforeEach(angular.mock.module('<%= appName %>'));
 
 	var element, scope;
 

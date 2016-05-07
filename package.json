@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "full-test": "bash ./test.sh"
+    "full-test": "bash ./test.sh ES5 && bash ./test.sh ES6"
   },
   "main": "app/index.js",
   "files": [
@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "chalk": "^0.5.0",
+    "concurrently": "^2.0.0",
     "underscore.string": "^3.0.3",
     "yeoman-blueprints": "1.0.5",
     "yeoman-generator": "^0.18.0",

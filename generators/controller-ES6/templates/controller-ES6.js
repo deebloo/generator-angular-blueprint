@@ -9,9 +9,9 @@
  * Controller for <%= appName %>
  */
 class <%= classedName %> {
-  constructor() {
-    this.foo = [];
-  }
+    constructor() {
+        this.foo = [];
+    }
 }
 
 <%= classedName %>.$inject = [];

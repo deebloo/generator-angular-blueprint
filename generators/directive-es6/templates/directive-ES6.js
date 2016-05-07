@@ -9,13 +9,13 @@
  * directive for <%= appName %>
  */
 function <%= cameledName %>() {
-  return {
-    restrict: 'A',
-    link: link
-  };
+    return {
+        restrict: 'A',
+        link: link
+    };
 
-  function link() {
-  }
+    function link() {
+    }
 }
 
 <%= cameledName %>.$inject = [];

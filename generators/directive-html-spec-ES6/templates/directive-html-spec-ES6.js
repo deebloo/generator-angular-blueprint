@@ -3,9 +3,8 @@
 describe('<%= type %>:<%= dashedName %>', function () {
     // load the directive's module and view
     beforeEach(angular.mock.module('<%= appName %>'));
-    beforeEach(angular.mock.module('templates'));
 
-    var element, scope;
+    let element, scope;
 
     // Initialize a mock scope
     beforeEach(inject(function ($injector) {

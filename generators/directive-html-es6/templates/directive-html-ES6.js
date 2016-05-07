@@ -11,18 +11,18 @@ import template from 'components/<%= dashedName %>/<%= dashedName %>.directive.h
  * directive for <%= appName %>
  */
 function <%= cameledName %>() {
-  	class Controller {
-		    constructor() {
-		    }
-	  }
-
-	  return {
-		    restrict: 'E',
-		    template: template,
-		    scope: {},
-		    controller: Controller,
-		    controllerAs: 'vm',
-		    bindToController: true,
+	class Controller {
+	    constructor() {
+		}
+	}
+	
+	return {
+		restrict: 'E',
+		template: template,
+		scope: {},
+		controller: Controller,
+		controllerAs: 'vm',
+		bindToController: true,
 	  };
 }
 
