@@ -278,21 +278,6 @@ module.exports = function (grunt) {
 
     /**
      * @description
-     * Renames files for browser caching purposes
-     */
-    filerev: {
-      dist: {
-        src: [
-          '<%= appSettings.dist %>/scripts/{,*/}*.js',
-          '<%= appSettings.dist %>/styles/{,*/}*.css',
-          '<%= appSettings.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= appSettings.dist %>/styles/fonts/*'
-        ]
-      }
-    },
-
-    /**
-     * @description
      * Reads HTML for usemin blocks to enable smart builds that automatically
      * concat, minify and revision files. Creates configurations in memory so
      * additional tasks can operate on them.
@@ -507,7 +492,6 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
     'usemin',
     'htmlmin',
     'jsdoc'
